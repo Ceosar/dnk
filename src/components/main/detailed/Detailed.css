@@ -1,0 +1,116 @@
+.detailed__container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.detailed__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: opacity(0.9);
+}
+
+.detailed__popup{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 1);
+}
+
+.detailed__popup-container{
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 1);
+}
+
+.detailed__popup-container label{
+    font-family: "Panton-Trial";
+    font-size: 54px;
+    font-weight: 400;
+}
+
+.detailed__popup-container span{
+    font-family: "Noto Sans JP";
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.detailed__popup-container a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 200px;
+    height: 51px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Noto Sans JP";
+    font-size: 22px;
+    font-weight: 350;
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+
+.detailed__popup-mobile{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 1);
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 1);
+    display: none;
+}
+
+.detailed__popup-mobile label{
+    font-family: "Panton-Trial";
+    font-size: 54px;
+    font-weight: 400;
+}
+
+.detailed__popup-mobile span{
+    font-family: "Noto Sans JP";
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.detailed__popup-mobile a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 200px;
+    height: 51px;
+    color: rgba(255, 255, 255, 1);
+    font-family: "Noto Sans JP";
+    font-size: 22px;
+    font-weight: 350;
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+
+@media screen and (max-width: 500px) {
+    .detailed__popup{
+        display: none;
+    }
+
+    .detailed__popup-mobile{
+        display: flex;
+        /* margin: 0 auto;
+        display: block;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        background-color: rgba(43, 43, 43, 1); */
+    }
+}
