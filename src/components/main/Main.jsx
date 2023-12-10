@@ -8,6 +8,7 @@ import dnk_logo_white from './../../assets/images/dnk_logo_white.png'
 import Detailed from "./detailed/Detailed";
 import SmoothInfo from "./smoothInfo/SmoothInfo";
 import Dnk_info from "./dnk_info/dnk_info";
+import MotivationSlider from "./motivation_slider/MotivationSlider";
 
 const Main = () => {
     const [preloader, setPreloader] = useState(true);
@@ -49,6 +50,7 @@ const Main = () => {
                     <Detailed/>
                     <SmoothInfo/>
                     <Dnk_info/>
+                    <MotivationSlider/>
                 </div>
             )}
         </>
