@@ -15,7 +15,7 @@ const Main = () => {
     const [timer, setTimer] = useState(3);
     const id = useRef(null);
 
-    useLocoScroll(!preloader);
+    // useLocoScroll(!preloader);
 
     const clear = () => {
         window.clearInterval(id.current);
