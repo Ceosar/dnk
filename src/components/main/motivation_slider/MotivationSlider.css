@@ -1,0 +1,52 @@
+.motivation-slider__container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.motivation-slider__data {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    color: #000;
+    font-family: Panton-Trial;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.8px;
+}
+
+.right {
+    -webkit-animation: marquee-text_right 15s linear infinite;
+    -moz-animation: marquee-text_right 15s infinite linear;
+    animation: marquee-text_right 15s linear infinite;
+}
+
+.left {
+    -webkit-animation: marquee-text_left 15s linear infinite;
+    -moz-animation: marquee-text_left 15s infinite linear;
+    animation: marquee-text_left 15s linear infinite;
+}
+
+@keyframes marquee-text_left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee-text_right {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}

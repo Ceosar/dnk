@@ -1,0 +1,41 @@
+.dnk_info__contaner {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 60px 80px 60px;
+    gap: 20px;
+
+}
+
+.dnk_info__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.dnk_info__title {
+    color: #2B2B2B;
+    font-family: Panton-Trial;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.36px;
+
+}
+
+
+.dnk_info__content__logo img {
+    min-width: 30vw;
+    height: 100%;
+}
+
+.dnk_info__content__text {
+    color: #000;
+    font-family: Noto Sans JP;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.88px;
+}
