@@ -9,6 +9,7 @@ import Detailed from "./detailed/Detailed";
 import SmoothInfo from "./smoothInfo/SmoothInfo";
 import Dnk_info from "./dnk_info/dnk_info";
 import MotivationSlider from "./motivation_slider/MotivationSlider";
+import Directions from "./directions/Directions";
 
 const Main = () => {
     const [preloader, setPreloader] = useState(true);
@@ -51,6 +52,7 @@ const Main = () => {
                     <SmoothInfo/>
                     <Dnk_info/>
                     <MotivationSlider/>
+                    <Directions/>
                 </div>
             )}
         </>

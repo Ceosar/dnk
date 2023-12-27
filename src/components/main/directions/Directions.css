@@ -1,0 +1,66 @@
+.directions-wrapper{
+    background: url("./../../../assets/images/direction_back.png") center center;
+}
+
+.directions-container{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.directions-text__h1{
+    margin-bottom: 80px;
+    font-family:'Panton-Trial';
+    font-size: 54px;
+    font-weight: 500;
+    color: rgba(43, 43, 43, 1);
+}
+
+.directions-text_h2{
+    margin-left: 20px;
+    font-family:'Panton-Trial';
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(43, 43, 43, 1);
+}
+
+.direction-container{
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+}
+
+.direction-container img{}
+
+.direction-discribe{
+    display: flex;
+    flex-direction: column;
+}
+
+.direction-discribe label{
+    font-family:'Noto Sans JP';
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(43, 43, 43, 1);
+}
+
+.direction-discribe__name{
+    font-family:'Noto Sans JP';
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(43, 43, 43, 1);
+    margin: 25px 0;
+}
+
+.direction-discribe__text{
+    font-family:'Noto Sans JP';
+    font-size: 14px;
+    font-weight: 350;
+    color: rgba(1, 1, 1, 1);
+    background-color: white;
+    border: 1px solid black;
+    width: 650px;
+    height: 200px;
+    padding: 20px;
+}
