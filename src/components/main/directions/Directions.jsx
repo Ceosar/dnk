@@ -10,13 +10,20 @@ export default function Directions() {
         const fetchData = async () => {
             try {
                 // const response = await axios.get('/api/directions');
-                const backendData = [
-                    ["информатика", "краткое описание информатики"],
-                    ["география", "краткое описание географии"],
-                    ["математика", "краткое описание математика"],
-                    ["робототехника", "краткое описание робототехника"],
-                    ["мемология", "краткое описание мемология"],
-                ];
+                // const backendData = [
+                //     ["информатика", "краткое описание информатики"],
+                //     ["география", "краткое описание географии"],
+                //     ["математика", "краткое описание математика"],
+                //     ["робототехника", "краткое описание робототехника"],
+                //     ["мемология", "краткое описание мемология"],
+                // ];
+                const backendData = {
+                    "информатика" : "краткое описание информатики",
+                    "география" : "краткое описание географии",
+                    "математика" : "краткое описание математика",
+                    "робототехника" : "краткое описание робототехника",
+                    "мемология" : "краткое описание мемология",
+                };
                 // setDirectionsData(response.data);
                 setDirectionsData(backendData);
             } catch (error) {
@@ -36,7 +43,7 @@ export default function Directions() {
                         Для школьников, студентов и преподавателей
                     </label>
                 </span>
-                {directionsData.map((direction, index) => (
+                {Object.entries(directionsData).map(([direction, description], index) => (
                     <div className="direction-container" key={index}>
                         <img
                             height={285}
@@ -46,8 +53,8 @@ export default function Directions() {
                         />
                         <div className="direction-discribe">
                             <label>Для кого</label>
-                            <span className="direction-discribe__name">{direction[0]}</span>
-                            <div className="direction-discribe__text">{direction[1]}</div>
+                            <span className="direction-discribe__name">{direction}</span>
+                            <div className="direction-discribe__text">{description}</div>
                         </div>
                     </div>
                 ))}

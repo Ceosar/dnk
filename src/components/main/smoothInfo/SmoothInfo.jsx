@@ -1,5 +1,6 @@
 import "./SmoothInfo.css"
-import marquee from './../../../assets/images/marquee.png'
+import marquee from './../../../assets/images/partner.png'
+// import marquee from './../../../assets/images/marquee.png'
 
 const SmoothInfo = () => {
     return (

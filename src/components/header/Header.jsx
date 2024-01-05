@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <div className="header__container" data-scroll-section>
-            <div className="header__inner desk">
+            <div id="header_up" className="header__inner desk">
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <div className="header__links">
                     <section className="header__links-up">
