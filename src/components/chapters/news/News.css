@@ -1,0 +1,31 @@
+.news-container{
+    margin: 20px;
+    width: 370px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news-title{
+}
+
+.news-title span:nth-child(1){
+    background-color: rgba(249, 249, 249, 1);
+    border-radius: 15px;
+    padding: 0 10px;
+}
+
+.news-title span:nth-child(2){
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(234, 234, 234, 0.65);
+    padding: 0 10px;
+}
+
+.news-text{
+    font-family: "Panton-Trial";
+    font-weight: 400;
+    font-size: 34px;
+    color: black;
+}
