@@ -1,10 +1,10 @@
-.news-content{
+.news-content {
     margin: 3%;
     display: flex;
     flex-wrap: wrap;
 }
 
-.news-container{
+.news-container {
     margin: 20px auto;
     width: 40%;
     /* height: 350px; */
@@ -14,26 +14,32 @@
     box-sizing: border-box;
 }
 
-.news-container img{
+.news-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.news-title span:nth-child(1){
+.news-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news__id {
     background-color: rgba(249, 249, 249, 1);
     border-radius: 15px;
     padding: 0 10px;
 }
 
-.news-title span:nth-child(2){
-    margin: 10px;
+.news__tag {
     border-radius: 15px;
     border: 1px solid rgba(234, 234, 234, 0.65);
     padding: 0 10px;
 }
 
-.news-text{
+.news-text {
     font-family: "Panton-Trial";
     font-weight: 400;
     font-size: 34px;

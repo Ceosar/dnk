@@ -10,7 +10,6 @@ export default function Directions() {
     useEffect(() => {
         const fetchData = async () => {
             axios.get(ApiUrl + ApiSection + "active_sections/").then((response) => {
-                console.log(response.data);
                 if (response.data.status) {
                     setDirectionsData(response.data.data)
                 }
