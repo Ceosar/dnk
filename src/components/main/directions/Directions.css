@@ -1,60 +1,63 @@
-.directions-wrapper{
+.directions-wrapper {
     background: url("./../../../assets/images/direction_back.png") center center;
+    padding: 50px 0px;
 }
 
-.directions-container{
+.directions-container {
     margin: 0 auto;
     width: 90%;
 }
 
-.directions-text__h1{
+.directions-text__h1 {
     margin-bottom: 80px;
-    font-family:'Panton-Trial';
+    font-family: 'Panton-Trial';
     font-size: 54px;
     font-weight: 500;
     color: rgba(43, 43, 43, 1);
 }
 
-.directions-text_h2{
+.directions-text_h2 {
     margin-left: 20px;
-    font-family:'Panton-Trial';
+    font-family: 'Panton-Trial';
     font-size: 22px;
     font-weight: 500;
     color: rgba(43, 43, 43, 1);
 }
 
-.direction-container{
+.direction-container {
     padding: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10%;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.direction-container img{}
+/* .direction-container img {} */
 
-.direction-discribe{
+.direction-discribe {
     display: flex;
     flex-direction: column;
 }
 
-.direction-discribe label{
-    font-family:'Noto Sans JP';
+.direction-discribe label {
+    font-family: 'Noto Sans JP';
     font-size: 14px;
     font-weight: 500;
     color: rgba(43, 43, 43, 1);
 }
 
-.direction-discribe__name{
-    font-family:'Noto Sans JP';
+.direction-discribe__name {
+    font-family: 'Noto Sans JP';
     font-size: 22px;
     font-weight: 500;
     color: rgba(43, 43, 43, 1);
     margin: 20px 0;
 }
 
-.direction-discribe__text{
-    font-family:'Noto Sans JP';
+.direction-discribe__text {
+    font-family: 'Noto Sans JP';
     font-size: 14px;
     font-weight: 350;
     color: rgba(1, 1, 1, 1);
@@ -63,18 +66,19 @@
     width: 650px;
     height: 190px;
     padding: 20px;
+    overflow: scroll !important;
 }
 
 @media screen and (max-width: 500px) {
-    .directions-container{
+    .directions-container {
         width: 90%;
     }
 
-    .direction-container img{
+    .direction-container img {
         display: none;
     }
 
-    .direction-discribe__text{
+    .direction-discribe__text {
         width: 100%;
         height: 130px;
     }

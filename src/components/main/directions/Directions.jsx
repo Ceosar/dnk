@@ -1,38 +1,28 @@
 import React, { useEffect, useState } from "react"
-import axios from "axios";
 import "./Directions.css"
 import test_png from "./../../../assets/images/direction_test.png"
+import axios from "axios";
+import { ApiUrl, ApiSection } from "../../../Constains";
 
 export default function Directions() {
     const [directionsData, setDirectionsData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                // const response = await axios.get('/api/directions');
-                // const backendData = [
-                //     ["информатика", "краткое описание информатики"],
-                //     ["география", "краткое описание географии"],
-                //     ["математика", "краткое описание математика"],
-                //     ["робототехника", "краткое описание робототехника"],
-                //     ["мемология", "краткое описание мемология"],
-                // ];
-                const backendData = {
-                    "информатика" : "краткое описание информатики",
-                    "география" : "краткое описание географии",
-                    "математика" : "краткое описание математика",
-                    "робототехника" : "краткое описание робототехника",
-                    "мемология" : "краткое описание мемология",
-                };
-                // setDirectionsData(response.data);
-                setDirectionsData(backendData);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+            axios.get(ApiUrl + ApiSection + "active_sections/").then((response) => {
+                console.log(response.data);
+                if (response.data.status) {
+                    setDirectionsData(response.data.data)
+                }
+            })
         };
 
         fetchData();
     }, []);
+
+    const openSection = (url) => {
+        console.log(url)
+    }
 
     return (
         <div className="directions-wrapper">
@@ -43,18 +33,18 @@ export default function Directions() {
                         Для школьников, студентов и преподавателей
                     </label>
                 </span>
-                {Object.entries(directionsData).map(([direction, description], index) => (
-                    <div className="direction-container" key={index}>
+                {directionsData.map((section, index) => (
+                    <div className="direction-container" key={index} onClick={() => openSection(section.url)}>
                         <img
                             height={285}
                             width={285}
-                            src={test_png}
+                            src={ApiUrl + section.photo_url}
                             alt="Фото направления"
                         />
-                        <div className="direction-discribe">
+                        <div className="direction-discribe" >
                             <label>Для кого</label>
-                            <span className="direction-discribe__name">{direction}</span>
-                            <div className="direction-discribe__text">{description}</div>
+                            <span className="direction-discribe__name">{section.name}</span>
+                            <div className="direction-discribe__text" dangerouslySetInnerHTML={{ __html: section.text }} ></div>
                         </div>
                     </div>
                 ))}
