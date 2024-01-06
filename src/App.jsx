@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="*" element={<Error/>}/>
-        <Route path="/chapter" element={<Chapters/>}/>
+        <Route path="/chapter/*" element={<Chapters/>}/>
         {/* <Route path="/" element={}/> */}
       </Routes>
     </>

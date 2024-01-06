@@ -31,10 +31,10 @@ const Header = () => {
                         </Link>
                     </section>
                     <section className="header__links-down">
-                        <Link>Главная</Link>
-                        <Link>Новости</Link>
+                        <Link to="/">Главная</Link>
+                        <Link to="/chapter/news">Новости</Link>
                         <Link>Расписание</Link>
-                        <Link>Документы</Link>
+                        <Link to="/chapter/doc">Документы</Link>
                     </section>
                 </div>
             </div>
