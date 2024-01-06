@@ -13,53 +13,47 @@ const News = () => {
             title: "Новости о науке",
             text: "Voluptatum laudantium quo harum corrupti?"
         },
-        // Добавьте другие новости по аналогии
+        {
+            number: "No 02",
+            title: "Новости о науке",
+            text: "Voluptatum laudantium quo harum corrupti?"
+        },
+        {
+            number: "No 02",
+            title: "Новости о науке",
+            text: "Voluptatum laudantium quo harum corrupti?"
+        },
+        {
+            number: "No 02",
+            title: "Новости о науке",
+            text: "Voluptatum laudantium quo harum corrupti?"
+        },
+        {
+            number: "No 0100",
+            title: "Новости о науке",
+            text: "Voluptatum laudantium quo harum corrupti?"
+        },
+        {
+            number: "No 02",
+            title: "Новости о науке",
+            text: "Voluptatum laudantium quo harum corrupti?"
+        },
     ];
 
 
     return (
         <div className="news-wrapper">
             <div className="news-content">
-                <div className="news-container">
-                    <div className="news-title">
-                        <span>No 01</span>
-                        <span>Детский университет</span>
+                {newsData.map((news, index) => (
+                    <div className="news-container" key={index}>
+                        <div className="news-title">
+                            <span>{news.number}</span>
+                            <span>{news.title}</span>
+                        </div>
+                        <img src={test_img} alt="" />
+                        <div className="news-text">{news.text}</div>
                     </div>
-                    <img src={test_img} alt="" />
-                    <div className="news-text">Lorem ipsum dolor sit amet consectetur.</div>
-                </div>
-                <div className="news-container">
-                    <div className="news-title">
-                        <span>No 01</span>
-                        <span>Детский университет</span>
-                    </div>
-                    <img src={test_img} alt="" />
-                    <div className="news-text">Lorem ipsum dolor sit amet consectetur.</div>
-                </div>
-                <div className="news-container">
-                    <div className="news-title">
-                        <span>No 01</span>
-                        <span>Детский университет</span>
-                    </div>
-                    <img src={test_img} alt="" />
-                    <div className="news-text">Lorem ipsum dolor sit amet consectetur.</div>
-                </div>
-                <div className="news-container">
-                    <div className="news-title">
-                        <span>No 01</span>
-                        <span>Детский университет</span>
-                    </div>
-                    <img src={test_img} alt="" />
-                    <div className="news-text">Lorem ipsum dolor sit amet consectetur.</div>
-                </div>
-                <div className="news-container">
-                    <div className="news-title">
-                        <span>No 01</span>
-                        <span>Детский университет</span>
-                    </div>
-                    <img src={test_img} alt="" />
-                    <div className="news-text">Lorem ipsum dolor sit amet consectetur.</div>
-                </div>
+                ))}
             </div>
         </div>
     );

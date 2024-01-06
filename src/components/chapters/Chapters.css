@@ -32,6 +32,8 @@
     flex-direction: column;
     align-items: self-start;
     gap: 66px;
+    position: relative;
+    z-index: 1;
 }
 
 .chapter-menu h1{
@@ -60,9 +62,11 @@
 }
 
 .chapter-content{
-    width: 100%;
+    width: 75%;
     height: 100vh;
     overflow:auto;
+    position: relative;
+    z-index: 0;
 }
 
 .chapter-lic{
