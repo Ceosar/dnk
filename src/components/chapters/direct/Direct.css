@@ -1,0 +1,51 @@
+.direct-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.direct-wrapper h1{
+    margin: 20px 0;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: "Panton-Trial";
+}
+
+.direct-container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.direct-content{
+    margin: 30px;
+    width: 25%;
+    height: 300px;
+}
+
+.direct-content img{
+    width: 100px;
+    height: auto;
+}
+
+.direct-name{
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.direct-btn{
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: all .4s;
+    border-radius: 25px;
+}
+
+.direct-btn:hover{
+    background-color: rgba(249, 249, 249, 0.5);
+    border-radius: 25px;
+}

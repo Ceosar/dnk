@@ -1,0 +1,63 @@
+.contact-wrapper{
+    width: 90%;
+    margin: 30px auto;
+}
+
+.contact-container{
+    margin: 10% 0;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+
+.contact-name{
+    color: rgba(43, 43, 43, 1);
+    font-family: "Panton-Trial";
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 4%;
+    line-height: 42.4px;
+}
+
+.contact-status{
+    color: rgba(43, 43, 43, 1);
+    font-family: "Panton-Trial";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 4%;
+    line-height: 27.43px;
+}
+
+.contact-socialmedia{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-telephone{
+    font-family: "Noto Sans JP";
+    font-weight: 400;
+    font-size: 22px;
+    display: flex;
+    gap: 10px;
+    color: rgba(43, 43, 43, 1);
+    line-height: 31px;
+}
+
+@media screen and (max-width: 500px) {
+    .contact-container{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-socialmedia{
+        flex-direction: row;
+    }
+}
