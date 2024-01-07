@@ -25,20 +25,17 @@ const Chapters = () => {
         case "/chapter/doc":
             chapterText = "Раздел Документов";
             break;
-        case "/direction/schedule":
+        case "/chapter/schedule":
             chapterText = "Раздел Расписания";
             break;
         case "/direction":
-            chapterText = "Раздел Направлений";
-            break;
-        case "/direction/*":
             chapterText = "Раздел Направлений";
             break;
         case "/chapter/contact":
             chapterText = "Раздел Контактов";
             break;
         default:
-            chapterText = "ДНК";
+            chapterText = "Дом Научной Коллборации";
             break;
     }
 
@@ -61,7 +58,7 @@ const Chapters = () => {
                             <Link to="/chapter/news">Новости</Link> / <br />
                             <Link to="/direction">Навигатор<img src={external_link} alt="" /></Link> /
                             <Link to="/chapter/contact">Контакты<img src={external_link} alt="" /></Link> / <br />
-                            <Link to="/direction/schedule">Расписание</Link> /
+                            <Link to="/chapter/schedule">Расписание</Link> /
                             <Link to="/chapter/doc">Документы</Link> / <br />
                             <Link>Оплата обучения<img src={external_link} alt="" /></Link>
                         </div>

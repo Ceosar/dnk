@@ -104,6 +104,7 @@ const AboutDirect = () => {
             {direct ? (
                 <div className='aboutdirect-container'>
                     <label className='aboutdirect-name'>{direct.name}</label>
+                    <img src={test_robot} alt="" />
                     <p className='aboutdirect-text'>{direct.text}</p>
                     <button className='aboutdirect-btn'>Записаться</button>
                 </div>
