@@ -1,7 +1,7 @@
 .direct-wrapper{
     width: 90%;
     margin: 0 auto;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .direct-wrapper h1{
@@ -24,8 +24,9 @@
 }
 
 .direct-content img{
-    width: 100px;
+    width: 200px;
     height: auto;
+    border-radius: 5px;
 }
 
 .direct-name{

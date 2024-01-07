@@ -6,7 +6,7 @@
 .schedule_labels{
     padding: 4% 0;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

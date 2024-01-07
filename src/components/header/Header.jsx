@@ -8,7 +8,7 @@ import external_link from "./../../assets/images/external_link.png"
 
 const Header = () => {
     useLayoutEffect(() => {
-        const tl = gsap.timeline({defaults:{duration:1}});
+        const tl = gsap.timeline({defaults:{duration:0.5}});
         tl.from(".header__container", {opacity:0, y: -100})
         tl.from(".header__links-down", {opacity:0, y: -100})
         tl.from(".header__links-up", {opacity:0, y: -100})

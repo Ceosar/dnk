@@ -1,111 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import test_robot from "./../../../../assets/images/test-robot.png"
 import "./AboutDirect.css"
+import axios from 'axios';
+import { ApiSection, ApiUrl } from '../../../../Constains';
 
 const AboutDirect = () => {
     const {id} = useParams();
     const [direct, setDirect] = useState(null);
-
-    const directData=[
-        {
-            index: 1,
-            name: "Робототехника",
-            image: test_robot,
-            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos doloremque quibusdam provident reiciendis, ullam enim, sapiente perspiciatis sit, labore obcaecati delectus fuga. Vitae quis, eum libero sed at dolorum obcaecati.",
-        },
-        {
-            index: 2,
-            name: "Робототехника",
-            image: test_robot,
-            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos doloremque quibusdam provident reiciendis, ullam enim, sapiente perspiciatis sit, labore obcaecati delectus fuga. Vitae quis, eum libero sed at dolorum obcaecati.",
-        },
-        {
-            index: 3,
-            name: "Робототехника",
-            image: test_robot,
-            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos doloremque quibusdam provident reiciendis, ullam enim, sapiente perspiciatis sit, labore obcaecati delectus fuga. Vitae quis, eum libero sed at dolorum obcaecati.",
-        },
-        {
-            index: 4,
-            name: "Робототехника",
-            image: test_robot,
-            text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos doloremque quibusdam provident reiciendis, ullam enim, sapiente perspiciatis sit, labore obcaecati delectus fuga. Vitae quis, eum libero sed at dolorum obcaecati.",
-        },
-        {
-            index: 5,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 6,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 7,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 8,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 9,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 10,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 11,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 12,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 13,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 14,
-            name: "Робототехника",
-            image: test_robot,
-        },
-        {
-            index: 15,
-            name: "Робототехника",
-            image: test_robot,
-        },
-    ]
+    console.log(id)
 
     useEffect(() => {
-        const selectedDirect = directData.find(item => item.index === parseInt(id))
-        if(selectedDirect){
-            setDirect(selectedDirect);
-        }
-        else{
-            setDirect(null);
-        }
-    },[id])
+        const fetchData = async () => {
+            axios.get(ApiUrl + ApiSection + "active_sections/?id_Sections=" + id).then((response) => {
+                if (response.data.status) {
+                    setDirect(response.data.data[0])
+                }
+            })
+        };
+        fetchData();
+    }, []);
 
     return (
         <div className='aboutdirect-wrapper'>
             {direct ? (
                 <div className='aboutdirect-container'>
-                    <label className='aboutdirect-name'>{direct.name}</label>
-                    <img src={test_robot} alt="" />
-                    <p className='aboutdirect-text'>{direct.text}</p>
+                    <span className='aboutdirect-name'>{direct.name}</span>
+                    <img src={ApiUrl+direct.photo_url} alt="" />
+                    <p className='aboutdirect-text' dangerouslySetInnerHTML={{ __html: direct.text }}></p>
                     <button className='aboutdirect-btn'>Записаться</button>
                 </div>
             ): (

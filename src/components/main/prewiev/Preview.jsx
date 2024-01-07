@@ -6,7 +6,7 @@ import { useLayoutEffect } from "react";
 const Preview = () => {
     useLayoutEffect(() => {
         const tl = gsap.timeline({defaults:{duration:1}});
-        tl.from("#preview__text", {opacity:0, y: -100, delay: 3})
+        tl.from("#preview__text", {opacity:0, y: -100, delay: 1})
     },[])
     return (
         <div className="preview__container" data-scroll-section>

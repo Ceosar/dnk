@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import "./Directions.css"
-import test_png from "./../../../assets/images/direction_test.png"
 import axios from "axios";
 import { ApiUrl, ApiSection } from "../../../Constains";
+import { Link } from "react-router-dom";
 
 export default function Directions() {
     const [directionsData, setDirectionsData] = useState([]);
@@ -19,21 +19,17 @@ export default function Directions() {
         fetchData();
     }, []);
 
-    const openSection = (url) => {
-        console.log(url)
-    }
-
     return (
         <div className="directions-wrapper">
             <div className="directions-container" data-scroll-section>
                 <span className="directions-text__h1">
                     Направления учебы
-                    <label className="directions-text_h2">
+                    <span className="directions-text_h2">
                         Для школьников, студентов и преподавателей
-                    </label>
+                    </span>
                 </span>
                 {directionsData.map((section, index) => (
-                    <div className="direction-container" key={index} onClick={() => openSection(section.url)}>
+                    <Link to={"/direction/"} className="direction-container" key={index}>
                         <img
                             height={285}
                             width={285}
@@ -45,7 +41,7 @@ export default function Directions() {
                             <span className="direction-discribe__name">{section.name}</span>
                             <div className="direction-discribe__text" dangerouslySetInnerHTML={{ __html: section.text }} ></div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

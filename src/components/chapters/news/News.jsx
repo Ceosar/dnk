@@ -1,60 +1,39 @@
-import "./News.css"
-import test_img from "./../../../assets/images/test-news.png"
-import { ApiNews, ApiUrl } from "../../../Constains";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import useInfiniteScroll from 'react-infinite-scroll-hook';
+import axios from "axios";
+import { ApiNews, ApiUrl } from "../../../Constains";
+import "./News.css"
 
 const News = () => {
-
     const [news, setNews] = useState([])
+    const [page, setPage] = useState(1)
+    const [nextPage, setNextPage] = useState(true)
 
-    useEffect(() => {
-        axios.get(ApiUrl + ApiNews + "active_news/").then(response => {
+    const getNews = () => {
+        axios.get(ApiUrl + ApiNews + "active_news/?page=" + page).then(response => {
+            console.log(response.data)
             if (response.data.status) {
-                setNews(response.data.data)
+                if(response.data.data.length != 0){
+                    setNews((oldState) => [...oldState, ...response.data.data]);
+                    setPage(page + 1)
+                }
+                else{
+                    setNextPage(false);
+                }
             }
         })
+    }
+
+    const [infiniteRef] = useInfiniteScroll({
+        // loading: loadingData,
+        hasNextPage: nextPage,
+        onLoadMore: getNews,
+    });
+
+
+    useEffect(() => {
+        getNews()
     }, []);
-
-
-    const newsData = [
-        {
-            number: "No 01",
-            title: "Детский университет",
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        },
-        {
-            number: "No 02",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-        {
-            number: "No 02",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-        {
-            number: "No 02",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-        {
-            number: "No 02",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-        {
-            number: "No 0100",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-        {
-            number: "No 02",
-            title: "Новости о науке",
-            text: "Voluptatum laudantium quo harum corrupti?"
-        },
-    ];
-
 
     return (
         <div className="news-wrapper">
@@ -62,16 +41,17 @@ const News = () => {
                 {news.map((news, index) => (
                     <div className="news-container" key={news.id}>
                         <div className="news-title">
-                            <span className="news__id">№ {index + 1}</span>
+                            <span className="news__id">No {index + 1}</span>
                             {news.tags.map((tag, index) => (
                                 <span key={index} className="news__tag">{tag}</span>
                             ))}
                         </div>
-                        <img style={{ borderRadius: 15 }} src={ApiUrl + news.preview_photo} alt="" />
+                        <img src={ApiUrl + news.preview_photo} alt="" />
                         {/* <img style={{ borderRadius: 15 }} src={test_img} alt="" /> */}
                         <div className="news-text">{news.title}</div>
                     </div>
                 ))}
+                {news.length > 0 &&(<div ref={infiniteRef} style={{ height: '1px' }} />)}
             </div>
         </div>
     );

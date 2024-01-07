@@ -53,13 +53,13 @@ const Chapters = () => {
                     <div className="chapter-menu">
                         <img src={dnk_logo} alt="" />
                         <h1>Дом Научной <br /> Коллборации</h1>
-                        <div className="chaper-links">
+                        <div className="chapter-links">
                             <Link to="/">Главная</Link> /
-                            <Link to="/chapter/news">Новости</Link> / <br />
+                            <Link to="/chapter/news">Новости</Link> /
                             <Link to="/direction">Навигатор<img src={external_link} alt="" /></Link> /
-                            <Link to="/chapter/contact">Контакты<img src={external_link} alt="" /></Link> / <br />
+                            <Link to="/chapter/contact">Контакты<img src={external_link} alt="" /></Link> /
                             <Link to="/chapter/schedule">Расписание</Link> /
-                            <Link to="/chapter/doc">Документы</Link> / <br />
+                            <Link to="/chapter/doc">Документы</Link> /
                             <Link>Оплата обучения<img src={external_link} alt="" /></Link>
                         </div>
                         <div className="chapter-text">{chapterText}</div>
