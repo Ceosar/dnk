@@ -7,7 +7,6 @@
 .news-container {
     margin: 20px auto;
     width: 40%;
-    /* height: 350px; */
     display: flex;
     flex-direction: column;
     gap: 20px;

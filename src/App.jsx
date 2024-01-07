@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<Main/>}/>
         <Route path="*" element={<Error/>}/>
         <Route path="/chapter/*" element={<Chapters/>}/>
+        <Route path="/direction/*" element={<Chapters/>}/>
         {/* <Route path="/" element={}/> */}
       </Routes>
     </>

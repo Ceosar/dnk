@@ -20,18 +20,19 @@
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 
 .chapter-menu{
     padding: 40px 30px;
-    width: 25%;
+    width: 20%;
     height: 100vh;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     align-items: self-start;
-    gap: 66px;
+    gap: 5%;
     position: relative;
     z-index: 1;
 }
@@ -44,6 +45,7 @@
 }
 
 .chaper-links a{
+    padding: 0 10px;
     font-family: "Noto Sans JP";
     font-size: 22px;
     font-weight: 350;
@@ -51,8 +53,8 @@
 }
 
 .chapter-text{
-    margin-top: 50px;
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
+    writing-mode:vertical-rl;
     font-family: "Panton-Trial";
     font-size: 70px;
     font-weight: 900;
@@ -73,5 +75,18 @@
     width: 50px;
     white-space: nowrap;
     height: fit-content;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
+    writing-mode: vertical-lr;
+    font-weight: 100;
+    font-size: 16px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
 }
+
+/* mobile */
+
+.chapter-header-mobile{
+    display: none;
+}
+

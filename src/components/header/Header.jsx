@@ -20,20 +20,20 @@ const Header = () => {
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <div className="header__links">
                     <section className="header__links-up">
-                        <Link>Контакты
+                        <Link to="/chapter/contact">Контакты
                             <img src={external_link} alt="" />
                         </Link>
                         <Link>Оплата обучения
                             <img src={external_link} alt="" />
                         </Link>
-                        <Link>Навигатор
+                        <Link to="/direction">Навигатор
                             <img src={external_link} alt="" />
                         </Link>
                     </section>
                     <section className="header__links-down">
                         <Link to="/">Главная</Link>
                         <Link to="/chapter/news">Новости</Link>
-                        <Link>Расписание</Link>
+                        <Link to="/chapter/schedule">Расписание</Link>
                         <Link to="/chapter/doc">Документы</Link>
                     </section>
                 </div>
