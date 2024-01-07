@@ -70,8 +70,9 @@ const Chapters = () => {
                             <Route path="doc" element={<Doc />} />
                             <Route path="contact" element={<Contact />} />
                             <Route path="schedule" element={<Schedule />} />
-                            <Route path="/" element={<Direct />} />
-                            <Route path="/:id" element={<AboutDirect />} />
+                            {/* <Route path="/" element={<Direct />} /> */}
+                            <Route path="/:id_section" element={<Direct />} />
+                            <Route path="/:id_section/direct_about/:id_direct" element={<AboutDirect />} />
                         </Routes>
                     </div>
                     <div className="chapter-lic">© 2019-2024 ДНК им.С.А.Абрукова</div>

@@ -5,15 +5,16 @@ import axios from 'axios';
 import { ApiSection, ApiUrl } from '../../../../Constains';
 
 const AboutDirect = () => {
-    const {id} = useParams();
+    const {id_direct} = useParams();
     const [direct, setDirect] = useState(null);
-    console.log(id)
+    console.log(id_direct)
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(ApiUrl + ApiSection + "active_sections/?id_Sections=" + id).then((response) => {
+            axios.get(ApiUrl + ApiSection + "get_direction/?id_Direction=" + id_direct).then((response) => {
                 if (response.data.status) {
-                    setDirect(response.data.data[0])
+                    console.log(response.data)
+                    setDirect(response.data.data)
                 }
             })
         };
@@ -25,12 +26,12 @@ const AboutDirect = () => {
             {direct ? (
                 <div className='aboutdirect-container'>
                     <span className='aboutdirect-name'>{direct.name}</span>
-                    <img src={ApiUrl+direct.photo_url} alt="" />
+                    <img src={ApiUrl+direct.photo} alt="" />
                     <p className='aboutdirect-text' dangerouslySetInnerHTML={{ __html: direct.text }}></p>
                     <button className='aboutdirect-btn'>Записаться</button>
                 </div>
             ): (
-                <p>Данные с {id} не найдены</p>
+                <p>Данные с {id_direct} не найдены</p>
             )}
         </div>
     );

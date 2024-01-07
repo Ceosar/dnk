@@ -29,7 +29,7 @@ export default function Directions() {
                     </span>
                 </span>
                 {directionsData.map((section, index) => (
-                    <Link to={"/direction/"} className="direction-container" key={index}>
+                    <Link to={"/direction/" + section.id} className="direction-container" key={index}>
                         <img
                             height={285}
                             width={285}
