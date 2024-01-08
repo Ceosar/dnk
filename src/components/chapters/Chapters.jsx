@@ -11,6 +11,7 @@ import Contact from "./contact/Contact";
 import dnk_logo from "./../../assets/images/dnk_logo.png"
 import external_link from "./../../assets/images/external_link.png"
 import mobile_burger from './../../assets/images/mobile_burger.png'
+import NewsAbout from "./news/newsAbout/NewsAbout";
 
 
 const Chapters = () => {
@@ -73,6 +74,7 @@ const Chapters = () => {
                             {/* <Route path="/" element={<Direct />} /> */}
                             <Route path="/:id_section" element={<Direct />} />
                             <Route path="/:id_section/direct_about/:id_direct" element={<AboutDirect />} />
+                            <Route path="news/news_about/:id_news" element={<NewsAbout />} />
                         </Routes>
                     </div>
                     <div className="chapter-lic">© 2019-2024 ДНК им.С.А.Абрукова</div>

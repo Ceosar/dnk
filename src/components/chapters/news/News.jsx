@@ -3,6 +3,7 @@ import useInfiniteScroll from 'react-infinite-scroll-hook';
 import axios from "axios";
 import { ApiNews, ApiUrl } from "../../../Constains";
 import "./News.css"
+import { Link } from "react-router-dom";
 
 const News = () => {
     const [news, setNews] = useState([])
@@ -31,6 +32,7 @@ const News = () => {
     });
 
 
+    console.log(news)
     useEffect(() => {
         getNews()
     }, []);
@@ -39,7 +41,7 @@ const News = () => {
         <div className="news-wrapper">
             <div className="news-content">
                 {news.map((news, index) => (
-                    <div className="news-container" key={news.id}>
+                    <Link to={`news_about/${news.id}`} className="news-container" key={news.id}>
                         <div className="news-title">
                             <span className="news__id">No {index + 1}</span>
                             {news.tags.map((tag, index) => (
@@ -47,9 +49,8 @@ const News = () => {
                             ))}
                         </div>
                         <img src={ApiUrl + news.preview_photo} alt="" />
-                        {/* <img style={{ borderRadius: 15 }} src={test_img} alt="" /> */}
                         <div className="news-text">{news.title}</div>
-                    </div>
+                    </Link>
                 ))}
                 {news.length > 0 &&(<div ref={infiniteRef} style={{ height: '1px' }} />)}
             </div>

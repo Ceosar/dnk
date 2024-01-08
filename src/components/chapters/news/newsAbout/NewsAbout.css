@@ -1,0 +1,24 @@
+.newsabout-wrapper{
+    padding-top: 5%;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+}
+
+.newsabout_title{
+    font-family: "Panton-Trial";
+    font-weight: 900;
+    font-size: 34px;
+    color: black;
+}
+
+.newsabout_text{
+    font-family: "Panton-Trial";
+    font-weight: 400;
+    font-size: 25px;
+    color: black;
+}

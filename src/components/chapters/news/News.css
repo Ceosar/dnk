@@ -6,14 +6,16 @@
 
 .news-container {
     margin: 20px auto;
-    width: 40%;
+    /* width: 40%; */
     display: flex;
     flex-direction: column;
     gap: 20px;
     box-sizing: border-box;
+    color: black;
 }
 
 .news-container img {
+    width: 350px;
     aspect-ratio: 16/10;
     object-fit: cover;
     object-position: center;
