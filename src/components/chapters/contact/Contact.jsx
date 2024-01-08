@@ -20,6 +20,10 @@ const Contact = () => {
         })
     }, []);
 
+    if(Object.keys(contact).length == 0){
+        return <div>Проверьте соединение с интернетом...</div>
+    }
+
     return (
         <div className='contact-wrapper'>
             {contact.map((contact, index) => (

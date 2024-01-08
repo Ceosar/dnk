@@ -14,8 +14,6 @@ const Schedule = () => {
         })
     }, []);
 
-    console.log(scheduleData)
-
     const scheduleLabel = [
         {
             index: 1,
@@ -46,6 +44,10 @@ const Schedule = () => {
             labelName: "Информатика",
         },
     ]
+
+    if(Object.keys(scheduleData).length == 0){
+        return <div>Проверьте соединение с интернетом...</div>
+    }
 
     return (
         <div className='schedule_wrapper'>

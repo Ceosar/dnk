@@ -32,10 +32,13 @@ const News = () => {
     });
 
 
-    console.log(news)
     useEffect(() => {
         getNews()
     }, []);
+
+    if(Object.keys(news).length == 0){
+        return <div>Проверьте соединение с интернетом...</div>
+    }
 
     return (
         <div className="news-wrapper">

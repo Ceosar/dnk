@@ -30,14 +30,16 @@ export default function Directions() {
                 </span>
                 {directionsData.map((section, index) => (
                     <Link to={"/direction/" + section.id} className="direction-container" key={index}>
-                        <img
-                            height={285}
-                            width={285}
-                            src={ApiUrl + section.photo_url}
-                            alt="Фото направления"
-                        />
+                        <div className="directions-image">
+                            <img
+                                height={285}
+                                width={285}
+                                src={ApiUrl + section.photo_url}
+                                alt="Фото направления"
+                            />
+                        </div>
                         <div className="direction-discribe" >
-                            <label>Для кого</label>
+                            <span>Для кого</span>
                             <span className="direction-discribe__name">{section.name}</span>
                             <div className="direction-discribe__text" dangerouslySetInnerHTML={{ __html: section.text }} ></div>
                         </div>

@@ -18,7 +18,11 @@ const NewsAbout = () => {
         })
     }, [])
 
-    console.log(aboutNews);
+    console.log(aboutNews)
+
+    if(Object.keys(aboutNews).length == 0){
+        return <div>Проверьте соединение с интернетом...</div>
+    }
 
     return (
         <div className='newsabout-wrapper'>

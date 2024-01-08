@@ -28,20 +28,26 @@
     padding: 40px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 10%;
     justify-content: center;
+    flex-wrap: wrap;
     cursor: pointer;
 }
 
-.direction-container img {
-    backdrop-filter: blur(40px);
+.directions-image{
+    padding: 30px;
+    backdrop-filter: blur(50px);
     border-radius: 15px;
+    border: 1px solid rgba(49,49,49, 0.5);
+}
+
+.direction-container img {
 }
 
 .direction-discribe {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .direction-discribe label {
@@ -64,12 +70,13 @@
     font-size: 14px;
     font-weight: 350;
     color: rgba(1, 1, 1, 1);
-    background-color: white;
-    border: 1px solid black;
+    backdrop-filter: blur(50px);
+    border: 1px solid rgba(49,49,49, 0.5);
     width: 650px;
     height: 190px;
     padding: 20px;
     overflow: auto;
+    border-radius: 15px;
 }
 
 @media screen and (max-width: 500px) {
