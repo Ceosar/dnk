@@ -58,13 +58,7 @@ const Schedule = () => {
                 <div className='schedule_block'>
                     <div className='schedule_tags'>
                         {scheduleData && scheduleData.map((days, index) =>
-                        // {
-                        //     // console.log(Object.keys(day).map)
-                        //     Object.keys(days).map((day, index) => {
-                        //         console.log(day)
-                        //         console.log(days[day])
-                        //     })
-                        // }
+
 
                         (
                             <div key={index}>
@@ -74,9 +68,14 @@ const Schedule = () => {
                                         <ul>
                                             {days[day].map((lesson, lessonIndex) =>
                                                 (
-                                                    <li key={lessonIndex}>
+                                                    <li className='schdule_lesson' key={lessonIndex}>
+                                                        <span>0{lessonIndex+1}</span>
                                                         <span>{lesson.time_start}</span>
+                                                        <span>{lesson.time_end}</span>
+                                                        <span> - </span>
+                                                        <span>{lesson.name_audience}</span>
                                                         <span>{lesson.name}</span>
+                                                        <span>{lesson.name_teacher}</span>
                                                         {/* <span>{scheduleData[day][index][2].name}</span> */}
                                                     </li>
                                                 )

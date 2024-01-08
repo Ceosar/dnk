@@ -65,6 +65,14 @@
     gap: 20px;
 }
 
+.footer-link{
+    transition: all .4s;
+}
+
+.footer-link:hover{
+    transform: translateY(-5px);
+}
+
 .footer-upbtn{
     display: flex;
     flex-direction: column;

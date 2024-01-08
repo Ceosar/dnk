@@ -41,6 +41,14 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
+    font-family: "Noto Sans JP";
+    font-size: 1em;
+    color: black;
+    transition: all .3s;
+}
+
+.header__links-up a:hover{
+    transform: translateY(-3px);
 }
 
 .header__links-down{
@@ -48,16 +56,15 @@
     gap: 22px;
 }
 
-.header__links-up a{
-    font-family: "Noto Sans JP";
-    font-size: 1em;
-    color: black;
-}
-
 .header__links-down a{
     font-family: "Noto Sans JP";
     font-size: 1em;
     color: black;
+    transition: all .3s;
+}
+
+.header__links-down a:hover{
+    transform: translateY(-3px);
 }
 
 @media screen and (max-width: 500px) {

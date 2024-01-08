@@ -28,3 +28,9 @@
 .schedule_label:hover{
     background-color: rgba(232, 232, 232, 0.3);
 }
+
+.schdule_lesson{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

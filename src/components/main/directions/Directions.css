@@ -34,7 +34,10 @@
     cursor: pointer;
 }
 
-/* .direction-container img {} */
+.direction-container img {
+    backdrop-filter: blur(40px);
+    border-radius: 15px;
+}
 
 .direction-discribe {
     display: flex;
