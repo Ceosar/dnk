@@ -55,37 +55,31 @@ const Schedule = () => {
                 ))}
             </div>
             <div className='schedule_container'>
-                <div className='schedule_block'>
-                    <div className='schedule_tags'>
-                        {scheduleData && scheduleData.map((days, index) =>
-
-
-                        (
-                            <div key={index}>
-                                {Object.keys(days).map((day, index) => (
-                                    <div key={index}>
-                                        <h3>{day}</h3>
-                                        <ul>
-                                            {days[day].map((lesson, lessonIndex) =>
-                                                (
-                                                    <li className='schdule_lesson' key={lessonIndex}>
-                                                        <span>0{lessonIndex+1}</span>
-                                                        <span>{lesson.time_start}</span>
-                                                        <span>{lesson.time_end}</span>
-                                                        <span> - </span>
-                                                        <span>{lesson.name_audience}</span>
-                                                        <span>{lesson.name}</span>
-                                                        <span>{lesson.name_teacher}</span>
-                                                        {/* <span>{scheduleData[day][index][2].name}</span> */}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-                                ))}
-                            </div>
-                        ))}
-                    </div>
+                <div className='schedule_tags'>
+                    {scheduleData && scheduleData.map((days, index) => (
+                        <div className='schedule_block' key={index}>
+                            {Object.keys(days).map((day, index) => (
+                                <div key={index}>
+                                    <h3 className='schedule_day'>{day}</h3>
+                                    <ul className='schdule_lessons'>
+                                        {days[day].map((lesson, lessonIndex) =>
+                                        (
+                                            <li className='schdule_lesson' key={lessonIndex}>
+                                                <span className='schedule_lesson-index'>0{lessonIndex + 1}</span>
+                                                <span className='schedule_lesson-time'>{lesson.time_start}</span>
+                                                <span className='schedule_lesson-defis'> - </span>
+                                                <span className='schedule_lesson-time'>{lesson.time_end}</span>
+                                                <span className='schedule_lesson-name'>{lesson.name}</span>
+                                                <span className='schedule_lesson-teacher'>{lesson.name_teacher}</span>
+                                                <span className='schedule_lesson-audience'>{lesson.name_audience}</span>
+                                            </li>
+                                        )
+                                        )}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
