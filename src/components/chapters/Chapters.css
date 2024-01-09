@@ -71,10 +71,10 @@
 .chapter-links{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .chapter-links a{
-    padding: 0 10px;
     font-family: "Noto Sans JP";
     font-size: 22px;
     font-weight: 350;
@@ -147,6 +147,7 @@
 
     .chapter-container{
         /* display: none; */
+        height: 100svh;
         width: 100%;
         flex-direction: column;
         scrollbar-width: none;
@@ -170,12 +171,16 @@
         display: none;
         overflow: hidden;
         height: 100%;
-        gap: 20px;
+        gap: 10px;
         backdrop-filter: blur(0px);
     }
 
     .open{
         display: flex;
+        justify-content: space-around;
+    }
+
+    .chapter-links{
     }
 
     .hide-content{
