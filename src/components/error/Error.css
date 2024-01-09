@@ -1,8 +1,22 @@
 .error_container{
     width: 90%;
-    height: 50%;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.error_btn-reload{
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 10px;
+    transition: all .4s;
+}
+
+.error_btn-reload:hover{
+    background-color: black;
+    color: white;
 }

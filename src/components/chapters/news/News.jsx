@@ -4,6 +4,8 @@ import axios from "axios";
 import { ApiNews, ApiUrl } from "../../../Constains";
 import "./News.css"
 import { Link } from "react-router-dom";
+import "./../../error/Error.css"
+
 
 const News = () => {
     const [news, setNews] = useState([])
@@ -11,7 +13,8 @@ const News = () => {
     const [nextPage, setNextPage] = useState(true)
 
     const getNews = () => {
-        axios.get(ApiUrl + ApiNews + "active_news/?page=" + page).then(response => {
+        axios.get(ApiUrl + ApiNews + "active_news/?page=" + page)
+        .then(response => {
             console.log(response.data)
             if (response.data.status) {
                 if(response.data.data.length != 0){
@@ -22,6 +25,9 @@ const News = () => {
                     setNextPage(false);
                 }
             }
+        })
+        .catch(error => {
+            setErrors(error);
         })
     }
 
@@ -36,15 +42,21 @@ const News = () => {
         getNews()
     }, []);
 
-    if(Object.keys(news).length == 0){
-        return <div>Проверьте соединение с интернетом...</div>
+    const [errors, setErrors] = useState(null);
+    if (errors) {
+        return (
+            <div className='error_container'>
+                <div>Проверьте соединение с интернетом...{errors.message}</div>
+                <button className='error_btn-reload' onClick={() => window.location.reload()}>Обновить</button>
+            </div>
+        )
     }
 
     return (
         <div className="news-wrapper">
             <div className="news-content">
                 {news.map((news, index) => (
-                    <Link to={`news_about/${news.id}`} className="news-container" key={news.id}>
+                    <Link to={`news_about/${news.id}`} className="news-container" key={news.id} target="_blank">
                         <div className="news-title">
                             <span className="news__id">No {index + 1}</span>
                             {news.tags.map((tag, index) => (

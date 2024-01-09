@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react';
 import "./Schedule.css"
 import { ApiSchedule, ApiUrl } from '../../../Constains';
 import axios from 'axios';
+import "./../../error/Error.css"
+
 
 const Schedule = () => {
     const [scheduleData, setScheduleData] = useState([]);
 
     useEffect(() => {
-        axios.get(ApiUrl + ApiSchedule + 'get_schedule/').then(response => {
+        axios.get(ApiUrl + ApiSchedule + 'get_schedule/')
+        .then(response => {
             if (response.data.status) {
                 setScheduleData(response.data.data['Основное'])
             }
+        })
+        .catch(error => {
+            setErrors(error);
         })
     }, []);
 
@@ -45,8 +51,14 @@ const Schedule = () => {
         },
     ]
 
-    if(Object.keys(scheduleData).length == 0){
-        return <div>Проверьте соединение с интернетом...</div>
+    const [errors, setErrors] = useState(null);
+    if (errors) {
+        return (
+            <div className='error_container'>
+                <div>Проверьте соединение с интернетом...{errors.message}</div>
+                <button className='error_btn-reload' onClick={() => window.location.reload()}>Обновить</button>
+            </div>
+        )
     }
 
     return (

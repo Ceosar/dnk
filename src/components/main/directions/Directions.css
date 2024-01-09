@@ -11,7 +11,7 @@
 .directions-text__h1 {
     margin-bottom: 80px;
     font-family: 'Panton-Trial';
-    font-size: 54px;
+    font-size: 50px;
     font-weight: 500;
     color: rgba(43, 43, 43, 1);
 }
@@ -50,7 +50,7 @@
     justify-content: space-between;
 }
 
-.direction-discribe label {
+.direction-discribe__span {
     font-family: 'Noto Sans JP';
     font-size: 14px;
     font-weight: 500;

@@ -39,7 +39,7 @@ export default function Directions() {
                             />
                         </div>
                         <div className="direction-discribe" >
-                            <span>Для кого</span>
+                            <span className="direction-discribe__span">Для кого</span>
                             <span className="direction-discribe__name">{section.name}</span>
                             <div className="direction-discribe__text" dangerouslySetInnerHTML={{ __html: section.text }} ></div>
                         </div>

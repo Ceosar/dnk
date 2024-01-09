@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ApiContacts, ApiUrl } from '../../../Constains';
 import "./Contact.css"
+import "./../../error/Error.css"
 
 import phone from "./../../../assets/images/phone_black.png"
 import vk from "./../../../assets/images/vk_black.png"
@@ -13,15 +14,25 @@ const Contact = () => {
     const [contact, setContact] = useState([])
 
     useEffect(() => {
-        axios.get(ApiUrl + ApiContacts + "active_contact/").then(response => {
+        axios.get(ApiUrl + ApiContacts + "active_contact/")
+        .then(response => {
             if (response.data.status) {
                 setContact(response.data.data)
             }
-        })
-    }, []);
+            })
+            .catch(error => {
+                setErrors(error);
+            })
+        }, []);
 
-    if(Object.keys(contact).length == 0){
-        return <div>Проверьте соединение с интернетом...</div>
+    const [errors, setErrors] = useState(null);
+    if (errors) {
+        return (
+            <div className='error_container'>
+                <div>Проверьте соединение с интернетом...{errors.message}</div>
+                <button className='error_btn-reload' onClick={() => window.location.reload()}>Обновить</button>
+            </div>
+        )
     }
 
     return (
@@ -30,7 +41,7 @@ const Contact = () => {
                 <div className='contact-container' key={index}>
                     <img src={ApiUrl + contact.photo} alt="" />
                     <section className='contact-info'>
-                        <span className='contact-name'>{contact.soname} {contact.name} <br/>{contact.surname}</span>
+                        <span className='contact-name'>{contact.soname} {contact.name} <br />{contact.surname}</span>
                         <span className='contact-status'>{contact.role}</span>
                         <div className="contact-socialmedia">
                             <a href={`tel:${contact.phone}`} target="_blank">
