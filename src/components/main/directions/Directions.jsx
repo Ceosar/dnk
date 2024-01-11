@@ -29,21 +29,21 @@ export default function Directions() {
                     </span>
                 </span>
                 {directionsData.map((section, index) => (
-                    <Link to={"/direction/" + section.id} className="direction-container" key={index}>
-                        <div className="directions-image">
+                    <div className="direction-container" key={index}>
+                        <Link to={"/direction/" + section.id} className="directions-image">
                             <img
                                 height={285}
                                 width={285}
                                 src={ApiUrl + section.photo_url}
                                 alt="Фото направления"
                             />
-                        </div>
-                        <div className="direction-discribe" >
+                        </Link>
+                        <Link to={"/direction/" + section.id} className="direction-discribe" >
                             <span className="direction-discribe__span">Для кого</span>
                             <span className="direction-discribe__name">{section.name}</span>
                             <div className="direction-discribe__text" dangerouslySetInnerHTML={{ __html: section.text }} ></div>
-                        </div>
-                    </Link>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>

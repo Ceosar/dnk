@@ -1,9 +1,9 @@
 import "./Footer.css"
-import dnk_logo from "./../../assets/images/dnk_logo_white.png"
+import dnk_logo from "./../../assets/images/dnk_logo_white_svg.svg"
 import phone from "./../../assets/images/phone.png"
 import vk from "./../../assets/images/vk.png"
 import mail from "./../../assets/images/mail.png"
-import arrow_up from "./../../assets/images/arrow_up.png"
+import arrow_up from "./../../assets/images/arrow_up.svg"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -31,17 +31,17 @@ export default function Footer() {
                 </div>
                 <div className="footer-rightside">
                     <div className="footer-links">
-                        <Link to={"/"} className="footer-link">Главная</Link>
-                        <Link to={"/"} className="footer-link">Новости</Link>
-                        <Link to={"/"} className="footer-link">Расписание</Link>
-                        <Link to={"/"} className="footer-link">Документы</Link>
+                        <Link to="/" className="footer-link">Главная</Link>
+                        <Link to="/chapter/news" className="footer-link">Новости</Link>
+                        <Link to="/chapter/schedule" className="footer-link">Расписание</Link>
+                        <Link to="/chapter/doc" className="footer-link">Документы</Link>
                     </div>
                     <div className="footer-links">
-                        <Link to={"/"} className="footer-link">Контакты</Link>
-                        <Link to={"/"} className="footer-link">Оплата обучения</Link>
-                        <Link to={"/"} className="footer-link">Навигатор</Link>
+                        <Link to="/chapter/contact" className="footer-link">Контакты</Link>
+                        <Link to={"https://dnk-chgu.ru/932-2/"} className="footer-link" target="_blank">Оплата обучения</Link>
+                        <Link to={"https://р21.навигатор.дети/directivities?municipality=4&municipality_region_id=&organizer=572&sort=recommend&pageSize=19"} className="footer-link" target="_blank">Навигатор</Link>
                     </div>
-                    <Link to={"/"} className="footer-upbtn">
+                    <Link onClick={ ()=> window.scrollTo({ top: 0, behavior:"smooth"})} to={"/"} className="footer-upbtn">
                         <img src={arrow_up} alt="" />
                         Вверх
                     </Link>

@@ -65,15 +65,19 @@ const Chapters = () => {
                             <Link to="/">Главная</Link> /
                             <Link to="/chapter/news" onClick={handleMobileClick}>Новости</Link>
                             /
-                            <Link to="/direction" onClick={handleMobileClick}>Навигатор<img src={external_link} alt="" /></Link>
+                            <Link to="https://р21.навигатор.дети/directivities?municipality=4&municipality_region_id=&organizer=572&sort=recommend&pageSize=19"
+                                onClick={handleMobileClick}
+                                target="_blank"
+                            >Навигатор<img src={external_link} alt="" />
+                            </Link>
                             /
-                            <Link to="/chapter/contact" onClick={handleMobileClick}>Контакты<img src={external_link} alt="" /></Link>
+                            <Link to="/chapter/contact" onClick={handleMobileClick}>Контакты</Link>
                             /
                             <Link to="/chapter/schedule" onClick={handleMobileClick}>Расписание</Link>
                             /
                             <Link to="/chapter/doc" onClick={handleMobileClick}>Документы</Link>
                             /
-                            <Link onClick={handleMobileClick}>Оплата обучения<img src={external_link} alt="" /></Link>
+                            <Link to={"https://dnk-chgu.ru/932-2/"} onClick={handleMobileClick}>Оплата обучения<img src={external_link} alt="" target="_blank" /></Link>
                         </div>
                         <div className="chapter-text">{chapterText}</div>
                     </div>

@@ -1,14 +1,33 @@
 import { Link } from "react-router-dom";
 import "./../Main.css"
+import { useEffect, useState } from "react";
+import { ApiNews, ApiUrl } from "../../../Constains";
+import axios from "axios";
 
 const About = () => {
+    const [news, setNews] = useState([]);
+
+    useEffect(() => {
+        axios.get(ApiUrl + ApiNews + "active_news/?page=1")
+            .then(response => {
+                if (response.data.status) {
+                    setNews(response.data.data)
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
+
+    console.log(news[0])
+
     var news_part = {
         part1: "Запись",
         part2: "Расписание",
         part3: "Документы",
     }
 
-    var news_text={
+    var news_text = {
         last_news1: "Последние большие новости дома научной коллаборации 1",
         last_news2: "Последние большие новости дома научной коллаборации 2",
         last_news3: "Последние большие новости дома научной коллаборации 3",
@@ -20,11 +39,13 @@ const About = () => {
                 <section className="about__last-news">
                     <span>Последние новости</span>
                     <div className="about__news-container">
-                        <Link to={'/news'} className="about__news news-first">
-                            <label className="about__part">{news_part.part1}</label>
-                            <span className="about__news-text">{news_text.last_news1}</span>
+                        {news.length > 0 && (
+                            <Link to={`chapter/news/news_about/${news[0].id}`} className="about__news news-first">
+                                <label className="about__part">{news[0].tags}</label>
+                                <span className="about__news-text">{news[0].title}</span>
 
-                        </Link>
+                            </Link>
+                        )}
                         <Link to={'/news'} className="about__news news-second">
                             <label className="about__part">{news_part.part2}</label>
                             <span className="about__news-text">{news_text.last_news2}</span>

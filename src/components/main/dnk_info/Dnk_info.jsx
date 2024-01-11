@@ -1,5 +1,6 @@
 import dnk_info_zag from "./../../../assets/images/dnk_info_zag.png"
 import "./Dnk_info.css"
+import video from "./../../../assets/images/dnk_video.mp4"
 
 export default function Dnk_info() {
     return (
@@ -10,7 +11,10 @@ export default function Dnk_info() {
                 </div>
                 <div className="dnk_info__content">
                     <div className="dnk_info__content__logo">
-                        <img src={dnk_info_zag} alt="" />
+                        {/* <img src={dnk_info_zag} alt="" /> */}
+                        <video controls >
+                            <source src={video} type="video/mp4" />
+                        </video>
                     </div>
                     <div className="dnk_info__content__text">Центру, созданному при ЧГУ им И.Н. Ульянова, дано имя первого проректора по научной работе университета, основателя первой в Чувашии проблемной научно-исследовательской лаборатории «Физика неустойчивого горения» — Сергея Андреевича Абрукова; ученого, получившего мировое признание за работы по разработке методов управления процессами горения, развитию теневых, интерференционных и голографических методов исследования.</div>
                 </div>

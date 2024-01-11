@@ -1,12 +1,18 @@
 import "./Header.css"
 import { Link } from "react-router-dom";
-import dnk_logo from './../../assets/images/dnk_logo.png'
-import mobile_burger from './../../assets/images/mobile_burger.png'
+import dnk_logo from './../../assets/images/dnk_logo_svg.svg'
+import mobile_burger from './../../assets/images/mobile_burger.svg'
 import gsap from "gsap";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import external_link from "./../../assets/images/external_link.png"
 
 const Header = () => {
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
+
+    const handleMobileClick = () => {
+        setIsOpenMenu(!isOpenMenu);
+        console.log(isOpenMenu)
+    }
     useLayoutEffect(() => {
         const tl = gsap.timeline({defaults:{duration:0.5}});
         tl.from(".header__container", {opacity:0, y: -100})
@@ -20,13 +26,11 @@ const Header = () => {
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <div className="header__links">
                     <section className="header__links-up">
-                        <Link to="/chapter/contact">Контакты
+                        <Link to="/chapter/contact">Контакты</Link>
+                        <Link to="https://dnk-chgu.ru/932-2/" target="_blank">Оплата обучения
                             <img src={external_link} alt="" />
                         </Link>
-                        <Link>Оплата обучения
-                            <img src={external_link} alt="" />
-                        </Link>
-                        <Link to="/direction">Навигатор
+                        <Link to="https://р21.навигатор.дети/directivities?municipality=4&municipality_region_id=&organizer=572&sort=recommend&pageSize=19" target="_blank">Навигатор
                             <img src={external_link} alt="" />
                         </Link>
                     </section>
@@ -40,8 +44,11 @@ const Header = () => {
             </div>
             <div className="header__inner mobile">
                 <img className="header__logo" src={dnk_logo} alt="" />
-                <button className="header__mobile-burger">
+                <button onClick={handleMobileClick} className="header__mobile-burger">
                     <img src={mobile_burger} alt="" />
+                    {isOpenMenu && (
+                        <div className="header__mobile-container"></div>
+                    )}
                 </button>
             </div>
         </div>

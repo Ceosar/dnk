@@ -25,7 +25,7 @@
 }
 
 .direction-container {
-    padding: 40px;
+    margin: 80px 0;
     display: flex;
     flex-direction: row;
     gap: 10%;
@@ -84,12 +84,22 @@
         width: 90%;
     }
 
-    .direction-container img {
-        display: none;
+    .directions-image{
+        width: 100%;
     }
+
+    .direction-discribe{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .direction-container img {
+        width: 50%;
+    } */
 
     .direction-discribe__text {
         width: 100%;
-        height: 130px;
+        /* height: 130px; */
     }
 }
