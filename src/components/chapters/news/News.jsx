@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import useInfiniteScroll from 'react-infinite-scroll-hook';
-import axios from "axios";
-import { ApiNews, ApiUrl } from "../../../Constains";
-import "./News.css"
 import { Link } from "react-router-dom";
+import { ApiNews, ApiUrl } from "../../../Constains";
+import axios from "axios";
+import useInfiniteScroll from 'react-infinite-scroll-hook';
+
+import "./News.css"
 import "./../../error/Error.css"
 
 

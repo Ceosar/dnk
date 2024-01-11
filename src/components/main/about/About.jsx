@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import "./../Main.css"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ApiNews, ApiUrl } from "../../../Constains";
 import axios from "axios";
+
+import "./../Main.css"
 
 const About = () => {
     const [news, setNews] = useState([]);

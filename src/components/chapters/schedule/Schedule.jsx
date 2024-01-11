@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import "./Schedule.css"
-import { ApiSchedule, ApiUrl } from '../../../Constains';
 import axios from 'axios';
+import { ApiSchedule, ApiUrl } from '../../../Constains';
+
+import "./Schedule.css"
 import "./../../error/Error.css"
 
 

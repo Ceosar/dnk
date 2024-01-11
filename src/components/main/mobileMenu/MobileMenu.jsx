@@ -1,11 +1,12 @@
-import React, { useEffect, useLayoutEffect } from 'react';
-import "./MobileMenu.css"
+import React, { useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from "gsap";
 
+import "./MobileMenu.css"
+
 const MobileMenu = (isOpenMenu) => {
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         var ctx = gsap.context(() => {
             const tl = gsap.timeline({ defaults: { duration: 0.5 } });
             tl.from(".mobile-menu", { x: 500 })
@@ -16,7 +17,7 @@ const MobileMenu = (isOpenMenu) => {
     }, [])
 
     return (
-        <div className={`mobile-menu ${isOpenMenu ? "open" : "close"}`}>
+        <div className={`mobile-menu ${isOpenMenu ? "open" : ''}`}>
             <div className='mobile-menu_container'>
                 <Link>Главная</Link>
                 <Link to="/chapter/contact">Контакты</Link>

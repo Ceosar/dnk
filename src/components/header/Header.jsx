@@ -1,10 +1,12 @@
-import "./Header.css"
+import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+
+import "./Header.css"
+
 import dnk_logo from './../../assets/images/dnk_logo_svg.svg'
 import mobile_burger from './../../assets/images/mobile_burger.svg'
 import cross from './../../assets/images/cross.svg'
-import gsap from "gsap";
-import { useLayoutEffect, useState } from "react";
 import external_link from "./../../assets/images/external_link.png"
 
 const Header = (props) => {

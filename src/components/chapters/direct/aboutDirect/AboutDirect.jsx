@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ApiSection, ApiUrl } from '../../../../Constains';
 import axios from 'axios';
+
 import "./AboutDirect.css"
 import "./../../../error/Error.css"
-import { ApiSection, ApiUrl } from '../../../../Constains';
 
 
 const AboutDirect = () => {

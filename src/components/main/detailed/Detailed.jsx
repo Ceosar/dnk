@@ -2,9 +2,11 @@ import { useRef, useLayoutEffect } from 'react';
 import { Link } from "react-router-dom";
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap';
+
 import "./Detailed.css"
 import detailed_background from "./../../../assets/images/detailed_background.png"
 import arrow_down_right from "./../../../assets/images/arrow_down_right.svg"
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Detailed = () => {

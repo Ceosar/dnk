@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
-import "./Directions.css"
-import axios from "axios";
-import { ApiUrl, ApiSection } from "../../../Constains";
 import { Link } from "react-router-dom";
+import { ApiUrl, ApiSection } from "../../../Constains";
+import axios from "axios";
+
+import "./Directions.css"
 
 export default function Directions() {
     const [directionsData, setDirectionsData] = useState([]);

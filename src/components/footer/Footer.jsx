@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"
+
 import "./Footer.css"
+
 import dnk_logo from "./../../assets/images/dnk_logo_white_svg.svg"
 import phone from "./../../assets/images/phone.png"
 import vk from "./../../assets/images/vk.png"
 import mail from "./../../assets/images/mail.png"
 import arrow_up from "./../../assets/images/arrow_up.svg"
-import { Link } from "react-router-dom"
 
 export default function Footer() {
     return(

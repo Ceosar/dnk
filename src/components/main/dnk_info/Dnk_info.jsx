@@ -1,4 +1,3 @@
-import dnk_info_zag from "./../../../assets/images/dnk_info_zag.png"
 import "./Dnk_info.css"
 import video from "./../../../assets/images/dnk_video.mp4"
 
@@ -11,7 +10,6 @@ export default function Dnk_info() {
                 </div>
                 <div className="dnk_info__content">
                     <div className="dnk_info__content__logo">
-                        {/* <img src={dnk_info_zag} alt="" /> */}
                         <video controls >
                             <source src={video} type="video/mp4" />
                         </video>

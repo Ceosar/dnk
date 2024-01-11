@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import "./Doc.css"
-import doc_img from "./../../../assets/images/doc.png"
 import { Link } from 'react-router-dom';
 import { ApiDoc, ApiUrl } from '../../../Constains';
 import axios from 'axios';
+
+import "./Doc.css"
 import "./../../error/Error.css"
+
+import doc_img from "./../../../assets/images/doc.png"
 
 
 const Doc = () => {

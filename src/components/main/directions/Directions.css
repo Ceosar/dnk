@@ -41,9 +41,6 @@
     border: 1px solid rgba(49,49,49, 0.5);
 }
 
-.direction-container img {
-}
-
 .direction-discribe {
     display: flex;
     flex-direction: column;
@@ -94,12 +91,7 @@
         align-items: center;
     }
 
-    /* .direction-container img {
-        width: 50%;
-    } */
-
     .direction-discribe__text {
         width: 100%;
-        /* height: 130px; */
     }
 }

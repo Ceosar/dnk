@@ -1,7 +1,9 @@
-import "./../Main.css"
-import preview_image from "./../../../assets/images/main_preview.png"
-import gsap from "gsap";
 import { useLayoutEffect } from "react";
+import gsap from "gsap";
+
+import "./../Main.css"
+
+import preview_image from "./../../../assets/images/main_preview.png"
 
 const Preview = () => {
     useLayoutEffect(() => {

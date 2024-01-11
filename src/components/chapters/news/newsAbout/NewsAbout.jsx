@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { ApiNews, ApiUrl } from '../../../../Constains';
 import { useParams } from 'react-router-dom';
+import { ApiNews, ApiUrl } from '../../../../Constains';
 import axios from 'axios';
-import "./NewsAbout.css"
 import ModalImage from "react-modal-image";
+
+import "./NewsAbout.css"
 import "./../../../error/Error.css"
 
 

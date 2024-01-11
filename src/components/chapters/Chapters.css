@@ -5,22 +5,6 @@
     background-size: cover;
 }
 
-/* .chapter-preloader{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aquamarine;
-} */
-
-.chapter-preloader {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Стили для показа preloader */
 .chapter-preloader:active {
     opacity: 1; /* Появление */
@@ -104,7 +88,6 @@
     width: 50px;
     white-space: nowrap;
     height: fit-content;
-    /* transform: rotate(90deg); */
     writing-mode: vertical-lr;
     font-weight: 100;
     font-size: 16px;
@@ -116,7 +99,6 @@
 /* mobile */
 
 .chapter_header-mobile{
-    /* padding: 20px 0; */
     display: none;
     height: 10vh;
 }
@@ -142,11 +124,9 @@
 
     .chapter-overlay{
         overflow:none;
-        /* display: none; */
     }
 
     .chapter-container{
-        /* display: none; */
         height: 100svh;
         width: 100%;
         flex-direction: column;
@@ -178,9 +158,6 @@
     .open{
         display: flex;
         justify-content: space-around;
-    }
-
-    .chapter-links{
     }
 
     .hide-content{

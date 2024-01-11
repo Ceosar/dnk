@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import "./Direct.css"
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
 import { ApiSection, ApiUrl } from '../../../Constains';
+import axios from 'axios';
+
+import "./Direct.css"
 import "./../../error/Error.css"
 
 const Direct = () => {
