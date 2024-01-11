@@ -9,9 +9,10 @@ import Direct from "./direct/Direct";
 import AboutDirect from "./direct/aboutDirect/AboutDirect";
 import Contact from "./contact/Contact";
 
-import dnk_logo from "./../../assets/images/dnk_logo.png"
+import dnk_logo from "./../../assets/images/dnk_logo_svg.svg"
 import external_link from "./../../assets/images/external_link.png"
-import mobile_burger from './../../assets/images/mobile_burger.png'
+import mobile_burger from './../../assets/images/mobile_burger.svg'
+import cross from './../../assets/images/cross.svg'
 import NewsAbout from "./news/newsAbout/NewsAbout";
 
 
@@ -21,7 +22,6 @@ const Chapters = () => {
     const [isOpenMenu, setIsOpenMenu] = useState(false)
 
     const handleMobileClick = () => {
-        console.log(isOpenMenu)
         setIsOpenMenu(!isOpenMenu);
     }
 
@@ -55,11 +55,17 @@ const Chapters = () => {
                     <div className="chapter_header-mobile">
                         <img src={dnk_logo} alt="" />
                         <button className="chapter__mobile-burger" onClick={handleMobileClick}>
-                            <img src={mobile_burger} alt="" />
+                            {isOpenMenu ? (
+                                <img src={cross} alt="" />
+                            ) : (
+                                <img src={mobile_burger} alt="" />
+                            )}
                         </button>
                     </div>
                     <div className={`chapter-menu ${isOpenMenu ? 'open' : ''}`}>
-                        <img src={dnk_logo} alt="" />
+                        <Link to={"/"}>
+                            <img src={dnk_logo} alt="" />
+                        </Link>
                         <h1>Дом Научной <br /> Коллборации</h1>
                         <div className="chapter-links">
                             <Link to="/">Главная</Link> /

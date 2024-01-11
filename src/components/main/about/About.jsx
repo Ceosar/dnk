@@ -14,12 +14,7 @@ const About = () => {
                     setNews(response.data.data)
                 }
             })
-            .catch(error => {
-                console.log(error)
-            })
     }, [])
-
-    console.log(news[0])
 
     var news_part = {
         part1: "Запись",

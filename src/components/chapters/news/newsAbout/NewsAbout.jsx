@@ -26,7 +26,6 @@ const NewsAbout = () => {
             })
     }, [])
 
-    console.log(aboutNews)
 
     const [errors, setErrors] = useState(null);
     if (errors) {

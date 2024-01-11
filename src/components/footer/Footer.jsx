@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-wrapper">
             <div className="footer-container">
                 <div className="footer-leftside">
-                    <a href="#">
+                    <a onClick={ ()=> window.scrollTo({ top: 0, behavior:"smooth"})}>
                         <img src={dnk_logo} alt="" />
                     </a>
                     <div className="footer-socialmedia">
@@ -31,7 +31,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-rightside">
                     <div className="footer-links">
-                        <Link to="/" className="footer-link">Главная</Link>
+                        <Link onClick={ ()=> window.scrollTo({ top: 0, behavior:"smooth"})} className="footer-link">Главная</Link>
                         <Link to="/chapter/news" className="footer-link">Новости</Link>
                         <Link to="/chapter/schedule" className="footer-link">Расписание</Link>
                         <Link to="/chapter/doc" className="footer-link">Документы</Link>

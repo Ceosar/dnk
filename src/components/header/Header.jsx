@@ -2,23 +2,24 @@ import "./Header.css"
 import { Link } from "react-router-dom";
 import dnk_logo from './../../assets/images/dnk_logo_svg.svg'
 import mobile_burger from './../../assets/images/mobile_burger.svg'
+import cross from './../../assets/images/cross.svg'
 import gsap from "gsap";
 import { useLayoutEffect, useState } from "react";
 import external_link from "./../../assets/images/external_link.png"
 
-const Header = () => {
+const Header = (props) => {
     const [isOpenMenu, setIsOpenMenu] = useState(false)
 
     const handleMobileClick = () => {
         setIsOpenMenu(!isOpenMenu);
-        console.log(isOpenMenu)
+        props.setIsOpenMenu(!isOpenMenu);
     }
     useLayoutEffect(() => {
-        const tl = gsap.timeline({defaults:{duration:0.5}});
-        tl.from(".header__container", {opacity:0, y: -100})
-        tl.from(".header__links-down", {opacity:0, y: -100})
-        tl.from(".header__links-up", {opacity:0, y: -100})
-    },[])
+        const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+        tl.from(".header__container", { opacity: 0, y: -100 })
+        tl.from(".header__links-down", { opacity: 0, y: -100 })
+        tl.from(".header__links-up", { opacity: 0, y: -100 })
+    }, [])
 
     return (
         <div className="header__container" data-scroll-section>
@@ -45,9 +46,10 @@ const Header = () => {
             <div className="header__inner mobile">
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <button onClick={handleMobileClick} className="header__mobile-burger">
-                    <img src={mobile_burger} alt="" />
-                    {isOpenMenu && (
-                        <div className="header__mobile-container"></div>
+                    {isOpenMenu ? (
+                        <img src={cross} alt="" />
+                    ) : (
+                        <img src={mobile_burger} alt="" />
                     )}
                 </button>
             </div>

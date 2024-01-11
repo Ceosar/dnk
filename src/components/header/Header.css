@@ -68,10 +68,6 @@
 }
 
 .header__mobile-container{
-    width: 100%;
-    height: 100svh;
-    position: absolute;
-    background-color: aqua;
 }
 
 @media screen and (max-width: 500px) {
@@ -84,6 +80,7 @@
     }
 
     .mobile{
+        position: relative;
         display: flex;
     }
 }

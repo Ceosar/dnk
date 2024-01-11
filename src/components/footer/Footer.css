@@ -93,7 +93,7 @@
     }
 
     .footer-socialmedia{
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .footer-leftside a{
@@ -101,7 +101,7 @@
     }
 
     .footer-rightside{
-        justify-content: center;
+        justify-content: space-between;
         gap: 20px;
     }
 }

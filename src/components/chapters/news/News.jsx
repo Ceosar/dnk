@@ -15,7 +15,6 @@ const News = () => {
     const getNews = () => {
         axios.get(ApiUrl + ApiNews + "active_news/?page=" + page)
         .then(response => {
-            console.log(response.data)
             if (response.data.status) {
                 if(response.data.data.length != 0){
                     setNews((oldState) => [...oldState, ...response.data.data]);

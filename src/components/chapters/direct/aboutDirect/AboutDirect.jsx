@@ -9,7 +9,6 @@ import { ApiSection, ApiUrl } from '../../../../Constains';
 const AboutDirect = () => {
     const { id_direct } = useParams();
     const [direct, setDirect] = useState(null);
-    console.log(id_direct)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,7 +17,6 @@ const AboutDirect = () => {
             )
                 .then((response) => {
                     if (response.data.status) {
-                        console.log(response.data)
                         setDirect(response.data.data)
                     }
                 })

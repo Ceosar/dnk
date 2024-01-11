@@ -1,0 +1,26 @@
+.mobile-menu{
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+.mobile-menu_container{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+}
+
+.mobile-menu a{
+    color: black;
+}
+
+.open{
+    height: 60vh;
+}
