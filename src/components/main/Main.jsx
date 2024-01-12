@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import useLocoScroll from "../../hooks/useLocoScroll";
 
 import "./Main.css"
@@ -41,6 +41,22 @@ const Main = () => {
         }
     }, [timer])
 
+    useEffect(() => {
+        const handleScroll = (event) => {
+            if (isOpenMenu) {
+                event.preventDefault();
+            }
+        };
+
+        if (isOpenMenu) {
+            document.addEventListener('scroll', handleScroll, { passive: false });
+        }
+
+        console.log(isOpenMenu)
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+        };
+    }, [isOpenMenu]);
 
     return (
         <>
@@ -49,14 +65,12 @@ const Main = () => {
                     <img src={dnk_logo_white} alt="" />
                 </div>
             ) : (
-                <div className="main__content"
+                <div className={`main__content ` + (isOpenMenu ? "noscroll" : '')}
                     id="main-container"
                     data-scroll-container
                 >
                     <Header isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
-                    {isOpenMenu && (
-                        <MobileMenu isOpenMenu={isOpenMenu} />
-                    )}
+                    <MobileMenu isOpenMenu={isOpenMenu} />
                     <Preview />
                     <About />
                     <Detailed />

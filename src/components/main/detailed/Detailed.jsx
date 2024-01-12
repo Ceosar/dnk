@@ -43,7 +43,7 @@ const Detailed = () => {
             <div className="detailed__popup-mobile">
                 <label>Что такое <br /> ДНК</label>
                 <span><b>Цель проекта</b> – создание новой образовательной инновационной среды, которая будет формировать у обучающихся, будущих специалистов, нужные навыки и компетенции, отвечающие вызовам цифровой экономики.</span>
-                <Link to={"/information"}>
+                <Link to={"http://dnk-chgu.ru/%d0%bf%d0%be%d0%b4%d1%80%d0%be%d0%b1%d0%bd%d0%b0%d1%8f-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f/"}>
                     Подробнее
                     <img src={arrow_down_right} alt="" />
                 </Link>

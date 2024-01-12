@@ -1,9 +1,14 @@
 .mobile-menu{
     width: 100%;
-    position: absolute;
+    height: 100svh;
+    position: fixed;
     z-index: 999;
     background-color: white;
     border-bottom: 1px solid black;
+    right: -100vw;
+    transition: right .3s;
+    top: 100px;
+    overflow: hidden;
 }
 
 .mobile-menu_container{
@@ -22,5 +27,5 @@
 }
 
 .open{
-    height: 60vh;
+    right: 0;
 }

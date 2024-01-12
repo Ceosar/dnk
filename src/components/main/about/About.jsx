@@ -39,7 +39,6 @@ const About = () => {
                             <Link to={`chapter/news/news_about/${news[0].id}`} className="about__news news-first">
                                 <label className="about__part">{news[0].tags}</label>
                                 <span className="about__news-text">{news[0].title}</span>
-
                             </Link>
                         )}
                         <Link to={'/news'} className="about__news news-second">

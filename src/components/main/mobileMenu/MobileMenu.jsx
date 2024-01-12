@@ -4,17 +4,17 @@ import gsap from "gsap";
 
 import "./MobileMenu.css"
 
-const MobileMenu = (isOpenMenu) => {
+const MobileMenu = ({isOpenMenu}) => {
 
-    useLayoutEffect(() => {
-        var ctx = gsap.context(() => {
-            const tl = gsap.timeline({ defaults: { duration: 0.5 } });
-            tl.from(".mobile-menu", { x: 500 })
-        })
-        return () => {
-            ctx.revert()
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     var ctx = gsap.context(() => {
+    //         const tl = gsap.timeline({ defaults: { duration: 0.5 } });
+    //         tl.from(".mobile-menu", { x: 500 })
+    //     })
+    //     return () => {
+    //         ctx.revert()
+    //     }
+    // }, [])
 
     return (
         <div className={`mobile-menu ${isOpenMenu ? "open" : ''}`}>

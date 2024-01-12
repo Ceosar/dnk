@@ -10,11 +10,12 @@ import cross from './../../assets/images/cross.svg'
 import external_link from "./../../assets/images/external_link.png"
 
 const Header = (props) => {
-    const [isOpenMenu, setIsOpenMenu] = useState(false)
+    // const [isOpenMenu, setIsOpenMenu] = useState(false)
 
     const handleMobileClick = () => {
-        setIsOpenMenu(!isOpenMenu);
-        props.setIsOpenMenu(!isOpenMenu);
+        // setIsOpenMenu(!isOpenMenu);
+        // console.log(props.isOpenMenu)
+        props.setIsOpenMenu(!props.isOpenMenu);
     }
     useLayoutEffect(() => {
         const tl = gsap.timeline({ defaults: { duration: 0.5 } });
@@ -48,7 +49,7 @@ const Header = (props) => {
             <div className="header__inner mobile">
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <button onClick={handleMobileClick} className="header__mobile-burger">
-                    {isOpenMenu ? (
+                    {props.isOpenMenu ? (
                         <img src={cross} alt="" />
                     ) : (
                         <img src={mobile_burger} alt="" />

@@ -1,3 +1,8 @@
+.noscroll{
+    overflow: hidden;
+    /* height: calc(100svh - 100px); */
+}
+
 /* preload */
 .preloader{
     width: 100%;
@@ -25,6 +30,7 @@
     top: 0;
     left: 0;
     filter: opacity(0.7);
+    filter: blur(3px);
 }
 
 .preview__text {
@@ -44,6 +50,7 @@
         font-size: 2em;
     }
     .preview__container{
+        margin-top: 100px;
         height: 50vh;
     }
 }
@@ -106,6 +113,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .preview__container {
+    }
+    
+
     .about__last-news{
         height: auto;
         flex-direction: column;
