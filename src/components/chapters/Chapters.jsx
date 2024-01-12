@@ -10,7 +10,7 @@ import AboutDirect from "./direct/aboutDirect/AboutDirect";
 import Contact from "./contact/Contact";
 
 import dnk_logo from "./../../assets/images/dnk_logo_svg.svg"
-import external_link from "./../../assets/images/external_link.png"
+import external_link from "./../../assets/images/external_link.svg"
 import mobile_burger from './../../assets/images/mobile_burger.svg'
 import cross from './../../assets/images/cross.svg'
 import NewsAbout from "./news/newsAbout/NewsAbout";

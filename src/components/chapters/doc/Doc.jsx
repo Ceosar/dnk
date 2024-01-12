@@ -6,7 +6,7 @@ import axios from 'axios';
 import "./Doc.css"
 import "./../../error/Error.css"
 
-import doc_img from "./../../../assets/images/doc.png"
+import doc_img from "./../../../assets/images/doc.svg"
 
 
 const Doc = () => {

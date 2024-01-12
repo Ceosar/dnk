@@ -8,18 +8,33 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     gap: 40px;
     flex-wrap: wrap;
 }
 
 .contact-container img{
+    width: 240px;
     border-radius: 5px;
 }
 
 .contact-info{
+    width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 4%;
+    gap: 20px;
+}
+
+.contact-icon{
+    max-width: 32px;
+    min-width: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.tgs{
+    min-width: 40px;
+    max-width: 42px;
 }
 
 .contact-name{
@@ -42,7 +57,7 @@
 
 .contact-socialmedia{
     display: flex;
-    gap: 40px;
+    gap: 35px;
     align-items: center;
     flex-wrap: wrap;
 }

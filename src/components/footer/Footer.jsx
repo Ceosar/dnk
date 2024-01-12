@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import "./Footer.css"
 
 import dnk_logo from "./../../assets/images/dnk_logo_white_svg.svg"
-import phone from "./../../assets/images/phone.png"
-import vk from "./../../assets/images/vk.png"
-import mail from "./../../assets/images/mail.png"
+import phone from "./../../assets/images/phone.svg"
+import vk from "./../../assets/images/vk.svg"
+import mail from "./../../assets/images/mail.svg"
 import arrow_up from "./../../assets/images/arrow_up.svg"
 
 export default function Footer() {

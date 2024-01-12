@@ -7,7 +7,7 @@ import "./Header.css"
 import dnk_logo from './../../assets/images/dnk_logo_svg.svg'
 import mobile_burger from './../../assets/images/mobile_burger.svg'
 import cross from './../../assets/images/cross.svg'
-import external_link from "./../../assets/images/external_link.png"
+import external_link from "./../../assets/images/external_link.svg"
 
 const Header = (props) => {
     // const [isOpenMenu, setIsOpenMenu] = useState(false)

@@ -5,9 +5,9 @@ import axios from 'axios';
 import "./Contact.css"
 import "./../../error/Error.css"
 
-import phone from "./../../../assets/images/phone_black.png"
-import vk from "./../../../assets/images/vk_black.png"
-import mail from "./../../../assets/images/mail_black.png"
+import phone from "./../../../assets/images/phone_black.svg"
+import vk from "./../../../assets/images/vk_black.svg"
+import mail from "./../../../assets/images/mail_black.svg"
 import tg from "./../../../assets/images/telegram-svgrepo-com.svg"
 
 
@@ -41,27 +41,27 @@ const Contact = () => {
             {contact.map((contact, index) => (
                 <div className='contact-container' key={index}>
                     <img src={ApiUrl + contact.photo} alt="" />
-                    <section className='contact-info'>
+                    <div className='contact-info'>
                         <span className='contact-name'>{contact.soname} {contact.name} <br />{contact.surname}</span>
                         <span className='contact-status'>{contact.role}</span>
                         <div className="contact-socialmedia">
                             <a href={`tel:${contact.phone}`} target="_blank">
                                 <div className="contact-telephone">
-                                    <img src={phone} alt="" />
+                                    <img className='contact-icon' src={phone} alt="" />
                                     <span>{contact.phone}</span>
                                 </div>
                             </a>
-                            <a href={`${contact.vk}`} target="_blank">
+                            <a className='contact-icon' href={`${contact.vk}`} target="_blank">
                                 <img src={vk} alt="" />
                             </a>
-                            <a href={`mailto:${contact.mail}`} target="_blank">
+                            <a className='contact-icon' href={`mailto:${contact.mail}`} target="_blank">
                                 <img src={mail} alt="" />
                             </a>
-                            <a href={`https://t.me/${contact.tg}`} target="_blank">
-                                <img src={tg} alt="" />
+                            <a  href={`https://t.me/${contact.tg}`} target="_blank">
+                                <img className='tgs' src={tg} alt="" />
                             </a>
                         </div>
-                    </section>
+                    </div>
                 </div>
             ))}
         </div>
