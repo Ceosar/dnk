@@ -69,14 +69,16 @@
     transform: rotate(180deg);
     writing-mode:vertical-rl;
     font-family: "Panton-Trial";
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 900;
     letter-spacing: 4%;
     color: rgba(249, 249, 249, 1);
     line-height: 87px;
+    flex-wrap: wrap;
 }
 
 .chapter-content{
+    
     width: 75%;
     height: 100vh;
     overflow:auto;
