@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ApiNews, ApiUrl } from "../../../Constains";
 import axios from "axios";
 import useInfiniteScroll from 'react-infinite-scroll-hook';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import "./News.css"
 import "./../../error/Error.css"
@@ -64,7 +65,14 @@ const News = () => {
                                 <span key={index} className="news__tag">{tag}</span>
                             ))}
                         </div>
-                        <img src={ApiUrl + news.preview_photo} alt="" />
+                        {/* <img src={ApiUrl + news.preview_photo} alt="" /> */}
+                        <LazyLoadImage
+                            alt=""
+                            src={ApiUrl + news.preview_photo}
+                            effect="opacity"
+                            loading="lazy"
+                            visibleByDefault="true"
+                        />
                         <div className="news-text">{news.title}</div>
                     </Link>
                 ))}

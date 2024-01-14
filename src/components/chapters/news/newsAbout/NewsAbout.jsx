@@ -30,7 +30,7 @@ const NewsAbout = () => {
             .finally(() => {
                 setTimeout(() => {
                     setPreloader(false);
-                }, 1000);
+                }, 700);
             })
     }, [])
 
