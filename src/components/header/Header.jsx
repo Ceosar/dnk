@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
@@ -10,11 +10,9 @@ import cross from './../../assets/images/cross.svg'
 import external_link from "./../../assets/images/external_link.svg"
 
 const Header = (props) => {
-    // const [isOpenMenu, setIsOpenMenu] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleMobileClick = () => {
-        // setIsOpenMenu(!isOpenMenu);
-        // console.log(props.isOpenMenu)
         props.setIsOpenMenu(!props.isOpenMenu);
     }
     useLayoutEffect(() => {
@@ -22,10 +20,21 @@ const Header = (props) => {
         tl.from(".header__container", { opacity: 0, y: -100 })
         tl.from(".header__links-down", { opacity: 0, y: -100 })
         tl.from(".header__links-up", { opacity: 0, y: -100 })
+
+        const handleScroll = () => {
+            const scrolled = window.scrollY > window.innerHeight;
+            setIsScrolled(scrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, [])
 
     return (
-        <div className="header__container" data-scroll-section>
+        <div className={"header__container " + (isScrolled ? "scroll" : "")} data-scroll-section>
             <div id="header_up" className="header__inner desk">
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <div className="header__links">

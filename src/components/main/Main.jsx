@@ -16,13 +16,11 @@ import MobileMenu from "./mobileMenu/MobileMenu.jsx";
 
 import dnk_logo_white from './../../assets/images/dnk_logo_white_svg.svg'
 
-const Main = () => {
-    const [preloader, setPreloader] = useState(true);
+const Main = ({ preloader, setPreloader }) => {
+
     const [timer, setTimer] = useState(1);
     const id = useRef(null);
     const [isOpenMenu, setIsOpenMenu] = useState(false);
-
-    // useLocoScroll(!preloader);
 
     const clear = () => {
         window.clearInterval(id.current);

@@ -14,6 +14,7 @@ const NewsAbout = () => {
     const [aboutNews, setAboutNews] = useState({})
 
     useEffect(() => {
+        console.log(123)
         axios.get(ApiUrl + ApiNews +
             "news_by_id/?id_News=" + id_news
         )
@@ -57,9 +58,9 @@ const NewsAbout = () => {
                     hideZoom={true}
                     showRotate={true}
                 />
-                <span className='newsabout_text'
+                <div className='newsabout_text'
                     dangerouslySetInnerHTML={{ __html: aboutNews.text }}
-                ></span>
+                ></div>
             </div>
         </div>
     );

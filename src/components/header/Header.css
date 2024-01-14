@@ -4,7 +4,13 @@
     height: 100px;
     position: fixed;
     backdrop-filter: blur(30px);
+    background-color: transparent;
     z-index: 9;
+    transition: all 0.2s;
+}
+
+.header__container.scroll {
+    background: white !important;
 }
 
 .header__inner {
@@ -12,6 +18,7 @@
     height: 100%;
     margin: 0 auto;
 }
+
 
 .desk {
     display: flex;

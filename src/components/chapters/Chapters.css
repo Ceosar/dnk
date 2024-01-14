@@ -42,8 +42,9 @@
     align-items: self-start;
     gap: 5%;
     position: relative;
-    z-index: 1;
+    /* z-index: -1; */
 }
+
 
 .chapter-menu h1{
     font-family: "Panton-Trial";

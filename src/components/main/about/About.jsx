@@ -36,20 +36,34 @@ const About = () => {
                     <span>Последние новости</span>
                     <div className="about__news-container">
                         {news.length > 0 && (
-                            <Link to={`chapter/news/news_about/${news[0].id}`} className="about__news news-first">
-                                <label className="about__part">{news[0].tags}</label>
-                                <span className="about__news-text">{news[0].title}</span>
-                            </Link>
-                        )}
-                        <Link to={'/news'} className="about__news news-second">
-                            <label className="about__part">{news_part.part2}</label>
-                            <span className="about__news-text">{news_text.last_news2}</span>
+                            <>
+                                <Link to={`chapter/news/news_about/${news[0].id}`} className="about__news news-first">
+                                    <label className="about__part">
+                                        {Array.isArray(news[0].tags) && news[0].tags.length > 0 ? news[0].tags[0] : ""}
+                                    </label>
+                                    <span className="about__news-text">{news[0].title}</span>
+                                </Link>
 
-                        </Link>
-                        <Link to={'/news'} className="about__news news-third">
-                            <label className="about__part">{news_part.part3}</label>
-                            <span className="about__news-text">{news_text.last_news3}</span>
-                        </Link>
+                                {news.length > 1 && (
+
+                                    <Link to={`chapter/news/news_about/${news[1].id}`} className="about__news">
+                                        <label className="about__part">
+                                            {Array.isArray(news[1].tags) && news[1].tags.length > 0 ? news[1].tags[0] : ""}
+                                        </label>
+                                        <span className="about__news-text">{news[1].title}</span>
+                                    </Link>
+                                )}
+
+                                {news.length > 2 && (
+                                    <Link to={`chapter/news/news_about/${news[2].id}`} className="about__news">
+                                        <label className="about__part">
+                                            {Array.isArray(news[2].tags) && news[2].tags.length > 0 ? news[2].tags[0] : ""}
+                                        </label>
+                                        <span className="about__news-text">{news[2].title}</span>
+                                    </Link>
+                                )}
+                            </>
+                        )}
                     </div>
                 </section>
             </div>

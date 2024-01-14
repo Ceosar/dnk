@@ -1,33 +1,36 @@
-.newsabout-wrapper{
+.newsabout-wrapper {
     width: 100%;
     height: 100%;
 }
 
-.newsabout-container{
+.newsabout-container {
     padding-top: 5%;
     width: 90%;
-    height: 70%;
-    margin: 0 auto;
+    height: fit-content;
+    margin: 0 auto 50px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10%;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.newsabout_title{
+.newsabout_title {
     font-family: "Panton-Trial";
     font-weight: 900;
-    font-size: 34px;
+    font-size: 36px;
     color: black;
 }
 
-.newsabout_text{
-    font-family: "Panton-Trial";
+.newsabout_text {
+    /* font-family: "Panton-Trial"; */
     font-weight: 400;
-    font-size: 25px;
-    color: black;
+    width: 100%;
+    text-align: start;
+    font-size: 18px;
+    line-height: 28px;
+    color: #2c2a2a;
 }
 
-.newsabout_modal-image{
+.newsabout_modal-image {
     width: 400px;
 }

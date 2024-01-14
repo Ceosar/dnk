@@ -15,20 +15,20 @@ const News = () => {
 
     const getNews = () => {
         axios.get(ApiUrl + ApiNews + "active_news/?page=" + page)
-        .then(response => {
-            if (response.data.status) {
-                if(response.data.data.length != 0){
-                    setNews((oldState) => [...oldState, ...response.data.data]);
-                    setPage(page + 1)
+            .then(response => {
+                if (response.data.status) {
+                    if (response.data.data.length != 0) {
+                        setNews((oldState) => [...oldState, ...response.data.data]);
+                        setPage(page + 1)
+                    }
+                    else {
+                        setNextPage(false);
+                    }
                 }
-                else{
-                    setNextPage(false);
-                }
-            }
-        })
-        .catch(error => {
-            setErrors(error);
-        })
+            })
+            .catch(error => {
+                setErrors(error);
+            })
     }
 
     const [infiniteRef] = useInfiniteScroll({
@@ -58,7 +58,7 @@ const News = () => {
                 {news.map((news, index) => (
                     <Link to={`news_about/${news.id}`} className="news-container" key={news.id} target="_blank">
                         <div className="news-title">
-                            <span className="news__id">No {index + 1}</span>
+                            <span className="news__id">№ {index + 1}</span>
                             {news.tags.map((tag, index) => (
                                 <span key={index} className="news__tag">{tag}</span>
                             ))}
@@ -67,7 +67,7 @@ const News = () => {
                         <div className="news-text">{news.title}</div>
                     </Link>
                 ))}
-                {news.length > 0 &&(<div ref={infiniteRef} style={{ height: '1px' }} />)}
+                {news.length > 0 && (<div ref={infiniteRef} style={{ height: '1px' }} />)}
             </div>
         </div>
     );

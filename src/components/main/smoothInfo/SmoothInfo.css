@@ -28,6 +28,10 @@
     height: 69px;
 }
 
+.smooth-info__images img {
+    margin: 0px 35px;
+}
+
 @keyframes marquee-text {
     0%{
         transform: translateX(0);
