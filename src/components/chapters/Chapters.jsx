@@ -24,6 +24,7 @@ const Chapters = () => {
     const menuRef = useRef(null);
     const contentRef = useRef(null);
     const burgerButtonRef = useRef(null);
+    const chapterWrapperRef = useRef(null);
 
     const handleMobileClick = () => {
         setIsOpenMenu(!isOpenMenu);
@@ -78,8 +79,20 @@ const Chapters = () => {
         }
     }, [isOpenMenu])
 
+    useEffect(() => {
+        const chapter = chapterWrapperRef.current;
+
+        gsap.from(chapter, { opacity: 0, duration: 0.3 })
+    }, [])
+
+    useEffect(() => {
+        const content = contentRef.current;
+
+        gsap.from(content, { opacity: 0, duration: 0.5 })
+    }, [location.pathname])
+
     return (
-        <div className="chapter-wrapper">
+        <div className="chapter-wrapper" ref={chapterWrapperRef}>
             <div className="chapter-overlay">
                 <div className="chapter-container">
                     <div className="chapter_header-mobile">
@@ -109,7 +122,7 @@ const Chapters = () => {
                             /
                             <Link to="/chapter/doc" onClick={handleMobileClick}>Документы</Link>
                             /
-                            <Link to={"https://dnk-chgu.ru/932-2/"} onClick={handleMobileClick}>Оплата обучения<img src={external_link} alt="" target="_blank" /></Link>
+                            <Link to={"https://dnk-chgu.ru/932-2/"} onClick={handleMobileClick} target="_blank">Оплата обучения<img src={external_link} alt="" target="_blank" /></Link>
                         </div>
                         <div className="chapter-text">{chapterText}</div>
                     </div>

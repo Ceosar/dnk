@@ -17,7 +17,7 @@ const Detailed = () => {
         gsap.to(el, {
             scrollTrigger: {
                 trigger: el,
-                start: '0% 90%',
+                start: '0% 80%',
                 end: 'top 60%',
                 scrub: 3,
                 toggleActions: 'restart pause reverse pause',
@@ -25,6 +25,17 @@ const Detailed = () => {
             },
             x: "100%",
         })
+        // gsap.to(el, {
+        //     scrollTrigger: {
+        //         trigger: el,
+        //         start: '0% 90%',
+        //         end: 'top 60%',
+        //         scrub: 3,
+        //         toggleActions: 'restart pause reverse pause',
+        //         markers: false,
+        //     },
+        //     x: "100%",
+        // })
     }, [])
 
     return (
@@ -34,7 +45,7 @@ const Detailed = () => {
                 <div className="detailed__popup-container">
                     <label>Что такое <br /> ДНК</label>
                     <span><b>Цель проекта</b> – создание новой образовательной инновационной среды, которая будет формировать у обучающихся, будущих специалистов, нужные навыки и компетенции, отвечающие вызовам цифровой экономики.</span>
-                    <Link to={"/information"}>
+                    <Link to={"https://dnk-chgu.ru/подробная-информация/"} target='_blank'>
                         Подробнее
                         <img src={arrow_down_right} alt="" />
                     </Link>
@@ -43,7 +54,7 @@ const Detailed = () => {
             <div className="detailed__popup-mobile">
                 <label>Что такое <br /> ДНК</label>
                 <span><b>Цель проекта</b> – создание новой образовательной инновационной среды, которая будет формировать у обучающихся, будущих специалистов, нужные навыки и компетенции, отвечающие вызовам цифровой экономики.</span>
-                <Link to={"http://dnk-chgu.ru/%d0%bf%d0%be%d0%b4%d1%80%d0%be%d0%b1%d0%bd%d0%b0%d1%8f-%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f/"}>
+                <Link to={"https://dnk-chgu.ru/подробная-информация/"} target='_blank'>
                     Подробнее
                     <img src={arrow_down_right} alt="" />
                 </Link>

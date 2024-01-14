@@ -4,6 +4,7 @@ import { ApiNews, ApiUrl } from "../../../Constains";
 import axios from "axios";
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import "./News.css"
 import "./../../error/Error.css"
@@ -72,6 +73,7 @@ const News = () => {
                             effect="opacity"
                             loading="lazy"
                             visibleByDefault="true"
+                            wrapperClassName="news-preload-maket"
                         />
                         <div className="news-text">{news.title}</div>
                     </Link>

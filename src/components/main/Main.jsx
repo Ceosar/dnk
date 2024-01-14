@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import useLocoScroll from "../../hooks/useLocoScroll";
+import gsap from "gsap";
 
 import "./Main.css"
 
@@ -21,6 +22,7 @@ const Main = ({ preloader, setPreloader }) => {
     const [timer, setTimer] = useState(1);
     const id = useRef(null);
     const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const mainContentRef = useRef(null)
 
     const clear = () => {
         window.clearInterval(id.current);
@@ -56,6 +58,12 @@ const Main = ({ preloader, setPreloader }) => {
         };
     }, [isOpenMenu]);
 
+    useEffect(() => {
+        const mainContent = mainContentRef.current;
+
+        gsap.from(mainContent, {opacity:0, duration: 0.2})
+    },[])
+
     return (
         <>
             {preloader ? (
@@ -66,6 +74,7 @@ const Main = ({ preloader, setPreloader }) => {
                 <div className={`main__content ` + (isOpenMenu ? "noscroll" : '')}
                     id="main-container"
                     data-scroll-container
+                    ref={mainContentRef}
                 >
                     <Header isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
                     <MobileMenu isOpenMenu={isOpenMenu} />
