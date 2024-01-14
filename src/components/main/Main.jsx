@@ -31,6 +31,7 @@ const Main = ({ preloader, setPreloader }) => {
         id.current = window.setInterval(() => {
             setTimer((timer) => timer - 1)
         }, 1000)
+        document.title = 'ДНК им. С.А. Абрукова';
     }, [])
 
     useLayoutEffect(() => {
@@ -50,7 +51,6 @@ const Main = ({ preloader, setPreloader }) => {
             document.addEventListener('scroll', handleScroll, { passive: false });
         }
 
-        console.log(isOpenMenu)
         return () => {
             document.removeEventListener('scroll', handleScroll);
         };

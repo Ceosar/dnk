@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
@@ -11,6 +11,7 @@ import external_link from "./../../assets/images/external_link.svg"
 
 const Header = (props) => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const burferButtonRef = useRef(null);
 
     const handleMobileClick = () => {
         props.setIsOpenMenu(!props.isOpenMenu);
@@ -32,6 +33,17 @@ const Header = (props) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [])
+
+    useEffect(() => {
+        const burgerButton = burferButtonRef.current;
+
+        if (props.isOpenMenu) {
+            gsap.to(burgerButton, { rotate: 0, duration: 0.4 });
+        }
+        else {
+            gsap.to(burgerButton, { rotate: 180, duration: 0.4 });
+        }
+    }, [props.isOpenMenu]);
 
     return (
         <div className={"header__container " + (isScrolled ? "scroll" : "")} data-scroll-section>
@@ -58,11 +70,7 @@ const Header = (props) => {
             <div className="header__inner mobile">
                 <img className="header__logo" src={dnk_logo} alt="" />
                 <button onClick={handleMobileClick} className="header__mobile-burger">
-                    {props.isOpenMenu ? (
-                        <img src={cross} alt="" />
-                    ) : (
-                        <img src={mobile_burger} alt="" />
-                    )}
+                    <img src={props.isOpenMenu ? cross : mobile_burger} alt="" ref={burferButtonRef} />
                 </button>
             </div>
         </div>

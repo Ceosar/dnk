@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import "./Chapters.css"
 
@@ -14,12 +14,16 @@ import external_link from "./../../assets/images/external_link.svg"
 import mobile_burger from './../../assets/images/mobile_burger.svg'
 import cross from './../../assets/images/cross.svg'
 import NewsAbout from "./news/newsAbout/NewsAbout";
+import gsap from "gsap";
 
 
 const Chapters = () => {
     const location = useLocation();
 
-    const [isOpenMenu, setIsOpenMenu] = useState(false)
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const menuRef = useRef(null);
+    const contentRef = useRef(null);
+    const burgerButtonRef = useRef(null);
 
     const handleMobileClick = () => {
         setIsOpenMenu(!isOpenMenu);
@@ -30,23 +34,49 @@ const Chapters = () => {
     switch (location.pathname) {
         case "/chapter/news":
             chapterText = "Раздел Новостей";
+            document.title = 'Новости';
             break;
         case "/chapter/doc":
             chapterText = "Раздел Документов";
+            document.title = 'Документы';
             break;
         case "/chapter/schedule":
             chapterText = "Раздел Расписания";
+            document.title = 'Расписания';
             break;
         case "/direction":
             chapterText = "Раздел Направлений";
+            document.title = 'Направления';
             break;
         case "/chapter/contact":
             chapterText = "Раздел Контактов";
+            document.title = 'Контакты';
             break;
         default:
             chapterText = "Дом Научной Коллборации";
+            document.title = 'ДНК им. С.А. Абрукова';
             break;
     }
+
+    useEffect(() => {
+        const menu = menuRef.current;
+        const content = contentRef.current;
+        const burgerButton = burgerButtonRef.current;
+        const isMobile = window.innerWidth <= 500;
+
+
+        if (menu && content && isMobile) {
+            if (isOpenMenu) {
+                gsap.to(menu, { opacity: 1, x: 0, duration: 0.4 });
+                gsap.to(content, { opacity: 0, duration: 0.4 });
+                gsap.to(burgerButton, { rotate: 0, duration: 0.4 });
+            } else {
+                gsap.to(menu, { opacity: 0, x: 100, duration: 0.4 });
+                gsap.to(content, { opacity: 1, duration: 0.4 });
+                gsap.to(burgerButton, { rotate: 180, duration: 0.4 });
+            }
+        }
+    }, [isOpenMenu])
 
     return (
         <div className="chapter-wrapper">
@@ -55,14 +85,10 @@ const Chapters = () => {
                     <div className="chapter_header-mobile">
                         <img src={dnk_logo} alt="" />
                         <button className="chapter__mobile-burger" onClick={handleMobileClick}>
-                            {isOpenMenu ? (
-                                <img src={cross} alt="" />
-                            ) : (
-                                <img src={mobile_burger} alt="" />
-                            )}
+                            <img ref={burgerButtonRef} src={isOpenMenu ? cross : mobile_burger} alt="" />
                         </button>
                     </div>
-                    <div className={`chapter-menu ${isOpenMenu ? 'open' : ''}`}>
+                    <div className={`chapter-menu ${isOpenMenu ? 'open' : ''}`} ref={menuRef}>
                         <Link to={"/"}>
                             <img src={dnk_logo} alt="" />
                         </Link>
@@ -87,7 +113,7 @@ const Chapters = () => {
                         </div>
                         <div className="chapter-text">{chapterText}</div>
                     </div>
-                    <div className={`chapter-content ${isOpenMenu ? "hide-content" : ''}`}>
+                    <div className={`chapter-content ${isOpenMenu ? "hide-content" : ''}`} ref={contentRef}>
                         <Routes>
                             <Route path="news" element={<News />} />
                             <Route path="doc" element={<Doc />} />

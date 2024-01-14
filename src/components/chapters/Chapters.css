@@ -125,6 +125,10 @@
         border-bottom: 1px solid black;
     }
 
+    .chapter__mobile-burger img{
+        width: 32px;
+    }
+
     .chapter-overlay{
         overflow:none;
     }

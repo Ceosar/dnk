@@ -39,6 +39,7 @@ const News = () => {
 
 
     useEffect(() => {
+        document.title = 'Новости';
         getNews()
     }, []);
 
