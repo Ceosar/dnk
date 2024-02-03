@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ApiSchedule, ApiUrl } from '../../../Constains';
+import { Popover } from 'antd';
 
 import "./Schedule.css"
 import "./../../error/Error.css"
@@ -8,17 +9,28 @@ import "./../../error/Error.css"
 
 const Schedule = () => {
     const [scheduleData, setScheduleData] = useState([]);
+    const [popoverVisible, setPopoverVisible] = useState(false);
+
+    const handleMouseEnter = (lesson) => {
+        if (lesson.replacement) {
+            setPopoverVisible(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setPopoverVisible(false);
+    };
 
     useEffect(() => {
         axios.get(ApiUrl + ApiSchedule + 'get_schedule/')
-        .then(response => {
-            if (response.data.status) {
-                setScheduleData(response.data.data['Основное'])
-            }
-        })
-        .catch(error => {
-            setErrors(error);
-        })
+            .then(response => {
+                if (response.data.status) {
+                    setScheduleData(response.data.data['Основное'])
+                }
+            })
+            .catch(error => {
+                setErrors(error);
+            })
     }, []);
 
     const scheduleLabel = [
@@ -79,20 +91,24 @@ const Schedule = () => {
                                     <ul className='schdule_lessons'>
                                         {days[day].map((lesson, lessonIndex) =>
                                         (
-                                            <li className='schdule_lesson' key={lessonIndex} >
-                                                <span className='schedule_lesson-index'>0{lessonIndex + 1}</span>
-                                                <span className='schedule_lesson-time'>{lesson.time_start}</span>
-                                                <span className='schedule_lesson-defis'> - </span>
-                                                <span className='schedule_lesson-time'>{lesson.time_end}</span>
-                                                <span className='schedule_lesson-name'>{lesson.name}</span>
-                                                <span className='schedule_lesson-teacher'>{lesson.name_teacher}</span>
-                                                <span className='schedule_lesson-audience'>{lesson.name_audience}</span>
-                                                {lesson.zamena ? (
-                                                    <div></div>
-                                                ):(
-                                                    <div></div>
-                                                )}
-                                            </li>
+                                            <Popover
+                                            placement="bottom"
+                                            title="Произошла замена урока"
+                                            visible={popoverVisible}
+                                            trigger="hover"
+                                            onMouseEnter={() => handleMouseEnter(true)}
+                                            onMouseLeave={handleMouseLeave}
+                                            >
+                                                <li className={`schdule_lesson ${lesson.replacement ? "replacement" : ""}`} key={lessonIndex} >
+                                                    <span className='schedule_lesson-index'>0{lessonIndex + 1}</span>
+                                                    <span className='schedule_lesson-time'>{lesson.time_start}</span>
+                                                    <span className='schedule_lesson-defis'> - </span>
+                                                    <span className='schedule_lesson-time'>{lesson.time_end}</span>
+                                                    <span className='schedule_lesson-name'>{lesson.name}</span>
+                                                    <span className='schedule_lesson-teacher'>{lesson.name_teacher}</span>
+                                                    <span className='schedule_lesson-audience'>{lesson.name_audience}</span>
+                                                </li>
+                                            </Popover>
                                         )
                                         )}
                                     </ul>

@@ -104,3 +104,7 @@
 .schedule_lesson-audience{
     width: 50px;
 }
+
+.replacement{
+    border: 1px solid rgba(255, 0, 0, 0.784);
+}
