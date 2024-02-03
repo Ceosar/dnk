@@ -2,14 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ApiSection, ApiUrl } from '../../../../Constains';
 import axios from 'axios';
+import { Modal } from 'antd';
+
 
 import "./AboutDirect.css"
 import "./../../../error/Error.css"
+import FormForDirect from './FormForDirect';
 
 
 const AboutDirect = () => {
     const { id_direct } = useParams();
     const [direct, setDirect] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {setIsModalOpen(true)};
+    const handleOk = () => {setIsModalOpen(false)};
+    const handleCancel = () => {setIsModalOpen(false)};
 
     useEffect(() => {
         const fetchData = async () => {
@@ -44,21 +52,31 @@ const AboutDirect = () => {
 
     return (
         <div className='aboutdirect-wrapper'>
-            {direct ? (
-                <div className='aboutdirect-container'>
-                    <span
-                        className='aboutdirect-name'
-                    >{direct.name}</span>
-                    <img src={ApiUrl + direct.photo} alt="" />
-                    <p
-                        className='aboutdirect-text'
-                        dangerouslySetInnerHTML={{ __html: direct.text }}
-                    ></p>
-                    <button className='aboutdirect-btn'>Записаться</button>
-                </div>
-            ) : (
-                <p>Данные с {id_direct} не найдены</p>
-            )}
+            <div className='aboutdirect-container'>
+                {direct ? (
+                    <>
+                        <span
+                            className='aboutdirect-name'
+                        >{direct.name}</span>
+                        <img src={ApiUrl + direct.photo} alt="" />
+                        <p
+                            className='aboutdirect-text'
+                            dangerouslySetInnerHTML={{ __html: direct.text }}
+                        ></p>
+                        <button className='aboutdirect-btn' onClick={showModal}>Записаться</button>
+                        <Modal
+                            title={direct.name}
+                            open={isModalOpen}
+                            onCancel={handleCancel}
+                            footer={null}
+                        >
+                            <FormForDirect handleOk={handleOk} handleCancel={handleCancel}/>
+                        </Modal>
+                    </>
+                ) : (
+                    <>Данные не найдены</>
+                )}
+            </div>
         </div>
     );
 }

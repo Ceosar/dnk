@@ -41,6 +41,14 @@
     transform: translateY(70%);
 }
 
+.preview__text2{
+    font-family: "Panton-Trial";
+    font-weight: 500;
+    font-size: 32px;
+    position: absolute;
+    transform: translateY(70%);
+}
+
 @media screen and (max-width: 500px) {
     .preview__image {
         max-width: 100%;

@@ -52,7 +52,7 @@ const Header = (props) => {
                 <div className="header__links">
                     <section className="header__links-up">
                         <Link to="/chapter/contact">Контакты</Link>
-                        <Link to="https://dnk-chgu.ru/932-2/" target="_blank">Оплата обучения
+                        <Link to="https://pay-online.chuvsu.ru/index/select" target="_blank">Оплата обучения
                             <img src={external_link} alt="" />
                         </Link>
                         <Link to="https://р21.навигатор.дети/directivities?municipality=4&municipality_region_id=&organizer=572&sort=recommend&pageSize=19" target="_blank">Навигатор

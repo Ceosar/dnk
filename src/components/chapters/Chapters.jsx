@@ -83,12 +83,14 @@ const Chapters = () => {
         const chapter = chapterWrapperRef.current;
 
         gsap.from(chapter, { opacity: 0, duration: 0.3 })
-    }, [])
+    }, [location.pathname == "/chapter"])
 
     useEffect(() => {
-        const content = contentRef.current;
+        if (window.innerWidth > 500) {
+            const content = contentRef.current;
 
-        gsap.from(content, { opacity: 0, duration: 0.5 })
+            gsap.from(content, { opacity: 0, duration: 0.5 })
+        }
     }, [location.pathname])
 
     return (
@@ -122,11 +124,11 @@ const Chapters = () => {
                             /
                             <Link to="/chapter/doc" onClick={handleMobileClick}>Документы</Link>
                             /
-                            <Link to={"https://dnk-chgu.ru/932-2/"} onClick={handleMobileClick} target="_blank">Оплата обучения<img src={external_link} alt="" target="_blank" /></Link>
+                            <Link to={"https://pay-online.chuvsu.ru/index/select"} onClick={handleMobileClick} target="_blank">Оплата обучения<img src={external_link} alt="" target="_blank" /></Link>
                         </div>
                         <div className="chapter-text">{chapterText}</div>
                     </div>
-                    <div className={`chapter-content ${isOpenMenu ? "hide-content" : ''}`} ref={contentRef}>
+                    <div className={`chapter-content ${isOpenMenu ? "hide-content" : null}`} ref={contentRef}>
                         <Routes>
                             <Route path="news" element={<News />} />
                             <Route path="doc" element={<Doc />} />

@@ -79,7 +79,7 @@ const Schedule = () => {
                                     <ul className='schdule_lessons'>
                                         {days[day].map((lesson, lessonIndex) =>
                                         (
-                                            <li className='schdule_lesson' key={lessonIndex}>
+                                            <li className='schdule_lesson' key={lessonIndex} >
                                                 <span className='schedule_lesson-index'>0{lessonIndex + 1}</span>
                                                 <span className='schedule_lesson-time'>{lesson.time_start}</span>
                                                 <span className='schedule_lesson-defis'> - </span>
@@ -87,6 +87,11 @@ const Schedule = () => {
                                                 <span className='schedule_lesson-name'>{lesson.name}</span>
                                                 <span className='schedule_lesson-teacher'>{lesson.name_teacher}</span>
                                                 <span className='schedule_lesson-audience'>{lesson.name_audience}</span>
+                                                {lesson.zamena ? (
+                                                    <div></div>
+                                                ):(
+                                                    <div></div>
+                                                )}
                                             </li>
                                         )
                                         )}

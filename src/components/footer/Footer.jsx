@@ -40,7 +40,7 @@ export default function Footer() {
                     </div>
                     <div className="footer-links">
                         <Link to="/chapter/contact" className="footer-link">Контакты</Link>
-                        <Link to={"https://dnk-chgu.ru/932-2/"} className="footer-link" target="_blank">Оплата обучения</Link>
+                        <Link to={"https://pay-online.chuvsu.ru/index/select"} className="footer-link" target="_blank">Оплата обучения</Link>
                         <Link to={"https://р21.навигатор.дети/directivities?municipality=4&municipality_region_id=&organizer=572&sort=recommend&pageSize=19"} className="footer-link" target="_blank">Навигатор</Link>
                     </div>
                     <Link onClick={ ()=> window.scrollTo({ top: 0, behavior:"smooth"})} to={"/"} className="footer-upbtn">
