@@ -9,6 +9,7 @@ services:
       - "8001:8182"
     volumes:
       - .:/code
+    restart: always
     # env_file:
     #   - .env
     # depends_on:
